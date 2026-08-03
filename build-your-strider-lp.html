@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Build Your Strider - Customize the Balance Bike That Grows With Them</title>
+<meta name="description" content="Build a Strider balance bike tuned to your kid - pick size, wheels, grips and color. From rocking to pedaling, one bike for years. Free shipping, 30-day money-back.">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<!-- Strider "Build Your Strider" LP - preview build v1 -->
+<script>/* viewport guard: ensure mobile width even if the host/preview lacks one */
+(function(){try{if(!document.querySelector('meta[name="viewport"]')){var m=document.createElement('meta');m.name='viewport';m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');(document.head||document.documentElement).appendChild(m);}}catch(e){}})();
+</script>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ===== Strider "Build Your Strider" LP - scoped to .strider-lp ===== */
+.strider-lp *{box-sizing:border-box;margin:0;padding:0}
+.strider-lp{
+  --yellow:#FFCD03; --yellow-d:#E6B800; --black:#231F20; --orange:#FF5F00;
+  --ink:#231F20; --ink-soft:#4a4547; --line:#ece9e3; --paper:#ffffff; --sand:#faf7f1; --sand2:#f3efe7;
+  --radius:16px; --shadow:0 6px 28px rgba(35,31,32,.10), 0 1px 3px rgba(35,31,32,.06);
+  --shadow-h:0 14px 40px rgba(35,31,32,.16), 0 2px 6px rgba(35,31,32,.08);
+  --maxw:1160px;
+  font-family:"Libre Franklin",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  color:var(--ink); background:var(--paper); line-height:1.55;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+.strider-lp img{max-width:100%;display:block}
+.strider-lp a{color:inherit;text-decoration:none}
+.strider-lp p{font-size:17px;color:var(--ink-soft)}
+.strider-lp .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.strider-lp section{position:relative}
+.strider-lp h1,.strider-lp h2,.strider-lp h3{line-height:1.06;letter-spacing:-.02em;color:var(--ink);font-weight:900}
+.strider-lp .eyebrow{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;color:var(--orange)}
+.strider-lp .tnum{font-variant-numeric:tabular-nums}
+
+/* Phosphor duotone recolor */
+.strider-lp .ph{display:inline-block;vertical-align:middle;flex:0 0 auto}
+.strider-lp .ph-duo{color:var(--black)}
+.strider-lp .ph-duo path[opacity]{opacity:1;fill:var(--yellow)}
+.strider-lp .ph-duo-b{color:var(--black)}
+.strider-lp .ph-duo-b path[opacity]{opacity:.16;fill:var(--black)}
+
+/* Buttons - single accent (yellow), reparent-safe literal hex */
+.strider-lp .btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:inherit;font-weight:900;font-size:17px;letter-spacing:-.01em;
+  background:#FFCD03;color:#231F20;border:2px solid #231F20;border-radius:999px;
+  padding:16px 26px;cursor:pointer;min-height:52px;
+  box-shadow:0 4px 0 #231F20; transition:transform .08s ease, box-shadow .08s ease, background .15s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.strider-lp .btn:hover{background:#FFD62E}
+.strider-lp .btn:active{transform:translateY(3px);box-shadow:0 1px 0 #231F20}
+.strider-lp .btn--ghost{background:transparent;color:#231F20;box-shadow:none}
+.strider-lp .btn--ghost:hover{background:rgba(35,31,32,.06)}
+.strider-lp .btn--lg{font-size:19px;padding:18px 32px;min-height:58px}
+.strider-lp .btn--wide{width:100%}
+.strider-lp a:focus-visible,.strider-lp button:focus-visible,.strider-lp summary:focus-visible{
+  outline:3px solid var(--orange);outline-offset:3px;border-radius:8px}
+
+/* Promo bar */
+.strider-lp .promo{background:var(--black);color:#fff;text-align:center;font-weight:700;font-size:13.5px;letter-spacing:.01em;padding:9px 16px}
+.strider-lp .promo b{color:var(--yellow);font-weight:900}
+.strider-lp .promo .dot{opacity:.4;padding:0 8px}
+
+/* Sticky header */
+.strider-lp .hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.strider-lp .hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.strider-lp .logo{font-weight:900;font-size:23px;letter-spacing:.02em;color:var(--black);text-transform:uppercase}
+.strider-lp .logo sup{font-size:9px;top:-.9em;font-weight:800}
+.strider-lp .hdr .btn{padding:11px 20px;min-height:44px;font-size:15px;box-shadow:0 3px 0 #231F20}
+.strider-lp .hdr .btn:active{transform:translateY(2px);box-shadow:0 1px 0 #231F20}
+
+/* Hero */
+.strider-lp .hero{
+  position:relative;color:#fff;overflow:hidden;
+  background:#231F20;
+  background-image:linear-gradient(180deg,rgba(20,17,18,.30) 0%,rgba(20,17,18,.20) 34%,rgba(20,17,18,.78) 100%),
+    url('https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/1920w/carousel/11/12_comp_-_251126_-_lifestyle_shoot-4507__74985.jpg');
+  background-size:cover;background-position:64% 30%;
+}
+.strider-lp .hero .wrap{padding:56px 20px 52px;max-width:var(--maxw)}
+.strider-lp .hero__inner{max-width:660px}
+.strider-lp .chip{display:inline-flex;align-items:center;gap:.5em;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);color:#fff;font-weight:800;font-size:13px;letter-spacing:.02em;padding:8px 14px;border-radius:999px;margin-bottom:18px}
+.strider-lp .chip .yd{width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px rgba(255,205,3,.25)}
+.strider-lp .hero h1{color:#fff;font-size:clamp(34px,6.4vw,60px);text-shadow:0 3px 18px rgba(0,0,0,.45)}
+.strider-lp .hero h1 .u{color:var(--yellow)}
+.strider-lp .hero__sub{color:#f4f1ec;font-size:clamp(17px,2.4vw,21px);margin-top:18px;max-width:560px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.strider-lp .hero__cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.strider-lp .hero__micro{margin-top:16px;color:#efece6;font-weight:600;font-size:14.5px;display:flex;flex-wrap:wrap;gap:6px 0;align-items:center;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.strider-lp .hero__micro .dot{opacity:.5;padding:0 9px}
+.strider-lp .hero__quiz{color:#fff;font-weight:800;font-size:15px;border-bottom:2px solid var(--yellow);padding-bottom:2px}
+.strider-lp .hero__quiz:hover{color:var(--yellow)}
+
+/* Authority strip */
+.strider-lp .auth{background:var(--black);color:#fff}
+.strider-lp .auth .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:22px 20px}
+.strider-lp .auth__item{display:flex;align-items:center;gap:12px;justify-content:center;text-align:left}
+.strider-lp .auth__item .ph{color:var(--yellow)}
+.strider-lp .auth__item .ph path[opacity]{opacity:1;fill:#fff}
+.strider-lp .auth__item b{display:block;font-size:16px;font-weight:900;color:#fff;line-height:1.15}
+.strider-lp .auth__item span{font-size:12.5px;color:#c9c4bf;font-weight:600}
+
+/* Section shells */
+.strider-lp .sec{padding:64px 0}
+.strider-lp .sec--sand{background:var(--sand)}
+.strider-lp .sec__head{max-width:720px;margin:0 auto 40px;text-align:center}
+.strider-lp .sec__head h2{font-size:clamp(27px,4.2vw,40px)}
+.strider-lp .sec__head p{margin-top:14px;font-size:18px}
+
+/* Problem */
+.strider-lp .prob{background:var(--sand2)}
+.strider-lp .prob .wrap{padding:48px 20px;text-align:center;max-width:840px}
+.strider-lp .prob h2{font-size:clamp(24px,3.8vw,34px)}
+.strider-lp .prob h2 .hl{background:linear-gradient(180deg,transparent 62%,rgba(255,205,3,.6) 62%)}
+.strider-lp .prob p{margin-top:14px;font-size:18px}
+
+/* Benefit grid */
+.strider-lp .bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.strider-lp .bcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow);transition:transform .16s ease, box-shadow .16s ease}
+.strider-lp .bcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+.strider-lp .bchip{width:56px;height:56px;border-radius:14px;background:rgba(255,205,3,.16);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.strider-lp .bcard h3{font-size:19px;font-weight:900}
+.strider-lp .bcard p{margin-top:8px;font-size:15px;line-height:1.5}
+
+/* How it works */
+.strider-lp .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.strider-lp .step{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);position:relative}
+.strider-lp .step .n{width:44px;height:44px;border-radius:50%;background:var(--yellow);border:2px solid var(--black);color:var(--black);font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 var(--black);margin-bottom:16px}
+.strider-lp .step h3{font-size:19px}
+.strider-lp .step p{margin-top:8px;font-size:15px}
+.strider-lp .proofline{margin-top:30px;text-align:center;font-weight:700;color:var(--ink);font-size:16px}
+.strider-lp .proofline .ph{color:var(--orange)}
+.strider-lp .proofline .ph path[opacity]{fill:var(--orange);opacity:.2}
+.strider-lp .ctacenter{margin-top:30px;text-align:center}
+
+/* Choose base */
+.strider-lp .picks{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch}
+.strider-lp .pick{background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .16s ease, box-shadow .16s ease}
+.strider-lp .pick:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+.strider-lp .pick__media{background:linear-gradient(180deg,#f7f3ec,#efe9df);padding:22px;position:relative;text-align:center}
+.strider-lp .pick__media img{height:190px;width:auto;margin:0 auto;object-fit:contain;filter:drop-shadow(0 12px 16px rgba(35,31,32,.14))}
+.strider-lp .pick__tag{position:absolute;top:16px;left:16px;background:var(--black);color:#fff;font-weight:900;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.strider-lp .pick__tag--pop{background:var(--yellow);color:var(--black)}
+.strider-lp .pick__body{padding:24px;display:flex;flex-direction:column;flex:1}
+.strider-lp .pick__body h3{font-size:24px}
+.strider-lp .pick__price{margin:6px 0 2px;font-weight:800;color:var(--ink)}
+.strider-lp .pick__price .amt{font-size:30px;font-weight:900;color:var(--black)}
+.strider-lp .pick__price .pre{font-size:14px;color:var(--ink-soft);font-weight:700}
+.strider-lp .pick__note{font-size:12.5px;color:var(--ink-soft);font-weight:600}
+.strider-lp .pick__desc{margin-top:12px;font-size:15px;color:var(--ink-soft);flex:1}
+.strider-lp .pick__body .btn{margin-top:18px}
+
+/* Journey */
+.strider-lp .jrny{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:var(--paper)}
+.strider-lp .jphase{padding:30px 26px;position:relative}
+.strider-lp .jphase + .jphase{border-left:1px solid var(--line)}
+.strider-lp .jphase .k{font-weight:900;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.strider-lp .jphase h3{font-size:21px;margin-top:8px}
+.strider-lp .jphase p{margin-top:8px;font-size:15px}
+.strider-lp .jphase .arw{position:absolute;right:-13px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--yellow);border:2px solid var(--black);z-index:2;display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--black);font-size:14px}
+.strider-lp .jphase:last-child .arw{display:none}
+
+/* Gallery */
+.strider-lp .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.strider-lp .gal figure{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5;background:#eee}
+.strider-lp .gal img{width:100%;height:100%;object-fit:cover}
+.strider-lp .gal .wide{grid-column:span 2;aspect-ratio:auto}
+
+/* Testimonials */
+.strider-lp .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.strider-lp .quote{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow)}
+.strider-lp .quote .mk{font-family:Georgia,serif;font-size:44px;line-height:.4;color:var(--yellow);font-weight:900}
+.strider-lp .quote p{font-size:17px;color:var(--ink);font-weight:600;margin-top:6px;line-height:1.45}
+.strider-lp .quote .who{margin-top:16px;font-size:13.5px;font-weight:800;color:var(--ink-soft);letter-spacing:.02em}
+
+/* Guarantee band */
+.strider-lp .grnt{background:var(--black);color:#fff}
+.strider-lp .grnt .wrap{padding:52px 20px;display:flex;gap:26px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center}
+.strider-lp .grnt .ph{color:var(--yellow)}
+.strider-lp .grnt .ph path[opacity]{opacity:1;fill:#fff}
+.strider-lp .grnt h2{color:#fff;font-size:clamp(24px,3.6vw,34px);max-width:640px}
+.strider-lp .grnt p{color:#cfcac4;margin-top:10px;font-size:16px}
+
+/* FAQ */
+.strider-lp .faq{max-width:820px;margin:0 auto}
+.strider-lp details{background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden}
+.strider-lp summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:800;font-size:17.5px;color:var(--ink);display:flex;justify-content:space-between;gap:16px;align-items:center}
+.strider-lp summary::-webkit-details-marker{display:none}
+.strider-lp summary .pm{flex:0 0 auto;width:26px;height:26px;border-radius:50%;border:2px solid var(--black);position:relative;transition:transform .2s ease}
+.strider-lp summary .pm::before,.strider-lp summary .pm::after{content:"";position:absolute;background:var(--black);left:50%;top:50%}
+.strider-lp summary .pm::before{width:11px;height:2.5px;transform:translate(-50%,-50%)}
+.strider-lp summary .pm::after{width:2.5px;height:11px;transform:translate(-50%,-50%);transition:opacity .2s ease}
+.strider-lp details[open] summary .pm::after{opacity:0}
+.strider-lp details[open] summary .pm{transform:rotate(90deg)}
+.strider-lp details .a{padding:0 22px 20px;font-size:16px;color:var(--ink-soft);line-height:1.6}
+
+/* Final CTA */
+.strider-lp .final{background:linear-gradient(160deg,#2b2627,#231F20);color:#fff;text-align:center}
+.strider-lp .final .wrap{padding:66px 20px}
+.strider-lp .final h2{color:#fff;font-size:clamp(28px,4.6vw,44px);max-width:720px;margin:0 auto}
+.strider-lp .final h2 .u{color:var(--yellow)}
+.strider-lp .final p{color:#d7d2cc;margin-top:14px;font-size:18px}
+.strider-lp .final .btn{margin-top:26px}
+.strider-lp .final__micro{margin-top:16px;color:#cfcac4;font-weight:600;font-size:14px}
+
+/* Footer */
+.strider-lp .ftr{background:#1a1718;color:#a49f9a;padding:34px 20px;text-align:center;font-size:13px;line-height:1.7}
+.strider-lp .ftr .logo{color:#fff;font-size:19px;display:inline-block;margin-bottom:10px}
+.strider-lp .ftr a{color:#cfcac4;text-decoration:underline}
+.strider-lp .ftr .fine{max-width:760px;margin:12px auto 0;color:#8a857f}
+
+/* Sticky mobile CTA (reparented to body -> literal hex) */
+.strider-lp-scta{
+  position:fixed;left:0;right:0;bottom:0;z-index:9000;display:none;
+  gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.86);backdrop-filter:blur(14px) saturate(160%);
+  border-top:1px solid #ece9e3;box-shadow:0 -6px 24px rgba(35,31,32,.12);
+}
+.strider-lp-scta a{
+  flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.4em;
+  font-family:"Libre Franklin",sans-serif;font-weight:900;font-size:16px;min-height:52px;border-radius:999px;
+  text-decoration:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.strider-lp-scta .s-build{background:#FFCD03;color:#231F20;border:2px solid #231F20;flex:1.6}
+.strider-lp-scta .s-quiz{background:#fff;color:#231F20;border:2px solid #231F20}
+.strider-lp-scta a:active{transform:translateY(2px)}
+body.strider-scta-on .strider-lp-scta{display:flex}
+
+/* Scroll reveal (failsafe: only hides when JS enables it) */
+.strider-lp.sr-on .sr{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.strider-lp.sr-on .sr.in{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:900px){
+  .strider-lp .bgrid{grid-template-columns:repeat(2,1fr)}
+  .strider-lp .steps,.strider-lp .quotes,.strider-lp .jrny{grid-template-columns:1fr}
+  .strider-lp .jphase + .jphase{border-left:none;border-top:1px solid var(--line)}
+  .strider-lp .jphase .arw{right:50%;top:auto;bottom:-13px;transform:translateX(50%)}
+  .strider-lp .picks{grid-template-columns:1fr}
+  .strider-lp .gal{grid-template-columns:repeat(2,1fr)}
+  .strider-lp .gal .wide{grid-column:span 2}
+}
+@media (max-width:620px){
+  .strider-lp .sec{padding:48px 0}
+  .strider-lp .hero .wrap{padding:40px 20px 44px}
+  .strider-lp .hero{background-position:62% 28%}
+  .strider-lp .auth .wrap{grid-template-columns:1fr;gap:14px;text-align:left}
+  .strider-lp .auth__item{justify-content:flex-start}
+  .strider-lp .bgrid{grid-template-columns:1fr}
+  .strider-lp .hdr .btn{display:none}
+  .strider-lp .final .wrap{padding:52px 20px}
+  body.strider-scta-on{padding-bottom:80px}
+}
+@media (prefers-reduced-motion:reduce){
+  .strider-lp *{animation:none!important;transition:none!important}
+  .strider-lp.sr-on .sr{opacity:1;transform:none}
+}
+</style>
+
+<div class="strider-lp">
+
+  <!-- 1. Promo bar -->
+  <div class="promo">Free shipping<sup>*</sup> on Strider bikes<span class="dot">&bull;</span><b>30-Day Money-Back Guarantee</b><span class="dot">&bull;</span>Over 10 million kids ride Strider</div>
+
+  <!-- 2. Sticky header -->
+  <header class="hdr">
+    <div class="wrap">
+      <div class="logo">STRIDER<sup>&reg;</sup></div>
+      <a class="btn" href="https://striderbikes.com/bike-builder/">Build Your Strider</a>
+    </div>
+  </header>
+
+  <!-- 3. Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero__inner">
+        <span class="chip"><span class="yd"></span>The original balance bike &bull; Since 2007</span>
+        <h1>Build the one bike your kid <span class="u">won&rsquo;t outgrow.</span></h1>
+        <p class="hero__sub">From rocking to balancing to pedaling &mdash; customize a Strider&reg; that fits your child today, and keeps fitting for years.</p>
+        <div class="hero__cta">
+          <a class="btn btn--lg" href="https://striderbikes.com/bike-builder/">Build Your Strider &rarr;</a>
+          <a class="hero__quiz" href="https://striderbikes.com/bikequiz">Not sure which fits? Take the 30-second quiz</a>
+        </div>
+        <div class="hero__micro">Free shipping<sup>*</sup><span class="dot">&bull;</span>30-Day Money-Back Guarantee<span class="dot">&bull;</span>Builds in under a minute</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Authority strip -->
+  <section class="auth">
+    <div class="wrap">
+      <div class="auth__item">
+        <svg class="ph" width="34" height="34" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M168 192a40 40 0 1 1-40-40a40 40 0 0 1 40 40m39-144h-39v85.82l42.72-19.42a9 9 0 0 0 5.28-8.2V57a9 9 0 0 0-9-9M88 48H49a9 9 0 0 0-9 9v49.2a9 9 0 0 0 5.28 8.2L88 133.82Z" opacity=".2"/><path d="M207 40H49a17 17 0 0 0-17 17v49.21a17 17 0 0 0 10 15.47l62.6 28.45a48 48 0 1 0 46.88 0L214 121.68a17 17 0 0 0 10-15.47V57a17 17 0 0 0-17-17m-47 16v72.67l-32 14.54l-32-14.54V56ZM48 106.21V57a1 1 0 0 1 1-1h31v65.39l-31.41-14.27a1 1 0 0 1-.59-.91M128 224a32 32 0 1 1 32-32a32 32 0 0 1-32 32m80-117.79a1 1 0 0 1-.59.91L176 121.39V56h31a1 1 0 0 1 1 1Z"/></g></svg>
+        <div><b>Since 2007</b><span>The original balance bike, built for kids</span></div>
+      </div>
+      <div class="auth__item">
+        <svg class="ph" width="34" height="34" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M168 144a40 40 0 1 1-40-40a40 40 0 0 1 40 40M64 56a32 32 0 1 0 32 32a32 32 0 0 0-32-32m128 0a32 32 0 1 0 32 32a32 32 0 0 0-32-32" opacity=".2"/><path d="M244.8 150.4a8 8 0 0 1-11.2-1.6A51.6 51.6 0 0 0 192 128a8 8 0 0 1 0-16a24 24 0 1 0-23.24-30a8 8 0 1 1-15.5-4A40 40 0 1 1 219 117.51a67.94 67.94 0 0 1 27.43 21.68a8 8 0 0 1-1.63 11.21M190.92 212a8 8 0 1 1-13.85 8a57 57 0 0 0-98.15 0a8 8 0 1 1-13.84-8a72.06 72.06 0 0 1 33.74-29.92a48 48 0 1 1 58.36 0A72.06 72.06 0 0 1 190.92 212M128 176a32 32 0 1 0-32-32a32 32 0 0 0 32 32m-56-56a8 8 0 0 0-8-8a24 24 0 1 1 23.24-30a8 8 0 1 0 15.5-4A40 40 0 1 0 37 117.51a67.94 67.94 0 0 0-27.4 21.68a8 8 0 1 0 12.8 9.61A51.6 51.6 0 0 1 64 128a8 8 0 0 0 8-8"/></g></svg>
+        <div><b>10 million+ riders</b><span>Kids who learned to ride on a Strider</span></div>
+      </div>
+      <div class="auth__item">
+        <svg class="ph" width="34" height="34" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M216 56v56c0 96-88 120-88 120s-88-24-88-120V56a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8" opacity=".2"/><path d="M208 40H48a16 16 0 0 0-16 16v56c0 52.72 25.52 84.67 46.93 102.19c23.06 18.86 46 25.26 47 25.53a8 8 0 0 0 4.2 0c1-.27 23.91-6.67 47-25.53C198.48 196.67 224 164.72 224 112V56a16 16 0 0 0-16-16m0 72c0 37.07-13.66 67.16-40.6 89.42a129.3 129.3 0 0 1-39.4 22.2a128.3 128.3 0 0 1-38.92-21.81C61.82 179.51 48 149.3 48 112V56h160ZM82.34 141.66a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32l-56 56a8 8 0 0 1-11.32 0Z"/></g></svg>
+        <div><b>30-Day Money-Back</b><span>Try it at home, risk-free</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Problem -->
+  <section class="prob">
+    <div class="wrap sr">
+      <h2>Most &ldquo;first bikes&rdquo; get <span class="hl">outgrown in a season</span> &mdash; or teach training-wheel habits kids have to unlearn.</h2>
+      <p>A Strider flips that. Balance comes first, so the leap to pedaling is faster and far more confident &mdash; and one bike adjusts to keep fitting as your child grows.</p>
+    </div>
+  </section>
+
+  <!-- 6. Benefits -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec__head sr">
+        <span class="eyebrow">Why parents build one</span>
+        <h2>One bike. Years of use.</h2>
+      </div>
+      <div class="bgrid">
+        <div class="bcard sr">
+          <div class="bchip"><svg class="ph ph-duo" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M232 56v64l-64-64Z" opacity=".2"/><path d="M232 48h-64a8 8 0 0 0-5.66 13.66L188.69 88L136 140.69l-34.34-34.35a8 8 0 0 0-11.32 0l-72 72a8 8 0 0 0 11.32 11.32L96 123.31l34.34 34.35a8 8 0 0 0 11.32 0L200 99.31l26.34 26.35A8 8 0 0 0 240 120V56a8 8 0 0 0-8-8m-8 52.69L187.31 64H224Z"/></g></svg></div>
+          <h3>Grows with them</h3>
+          <p>An adjustable seat and bars keep the same bike fitting from the first wobble to full-speed gliding.</p>
+        </div>
+        <div class="bcard sr">
+          <div class="bchip"><svg class="ph ph-duo" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M128 80a24 24 0 1 1-24-24a24 24 0 0 1 24 24m40 72a24 24 0 1 0 24 24a24 24 0 0 0-24-24" opacity=".2"/><path d="M40 88h33a32 32 0 0 0 62 0h81a8 8 0 0 0 0-16h-81a32 32 0 0 0-62 0H40a8 8 0 0 0 0 16m64-24a16 16 0 1 1-16 16a16 16 0 0 1 16-16m112 104h-17a32 32 0 0 0-62 0H40a8 8 0 0 0 0 16h97a32 32 0 0 0 62 0h17a8 8 0 0 0 0-16m-48 24a16 16 0 1 1 16-16a16 16 0 0 1-16 16"/></g></svg></div>
+          <h3>Built to fit your kid</h3>
+          <p>Choose the model, frame color, wheels and grips that match your rider &mdash; not a one-size-fits-all box.</p>
+        </div>
+        <div class="bcard sr">
+          <div class="bchip"><svg class="ph ph-duo" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M248 160a40 40 0 1 1-40-40a40 40 0 0 1 40 40M48 120a40 40 0 1 0 40 40a40 40 0 0 0-40-40" opacity=".2"/><path d="M208 112a47.8 47.8 0 0 0-16.93 3.09L165.93 72H192a8 8 0 0 1 8 8a8 8 0 0 0 16 0a24 24 0 0 0-24-24h-40a8 8 0 0 0-6.91 12l11.65 20H99.26L82.91 60A8 8 0 0 0 76 56H48a8 8 0 0 0 0 16h23.41l13.71 23.51l-15.71 21.55a48.13 48.13 0 1 0 12.92 9.44l11.59-15.9l31.17 53.4a8 8 0 1 0 13.82-8l-30.32-52h57.48l11.19 19.17A48 48 0 1 0 208 112M80 160a32 32 0 1 1-20.21-29.74l-18.25 25a8 8 0 1 0 12.92 9.42l18.25-25A31.88 31.88 0 0 1 80 160m128 32a32 32 0 0 1-22.51-54.72l15.6 26.72a8 8 0 1 0 13.82-8l-15.61-26.79A32 32 0 1 1 208 192"/></g></svg></div>
+          <h3>Skip the training wheels</h3>
+          <p>Learning balance first is a faster, more confident path to two wheels &mdash; no bad habits to unlearn later.</p>
+        </div>
+        <div class="bcard sr">
+          <div class="bchip"><svg class="ph ph-duo" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M248 120v64a8 8 0 0 1-8 8h-24a24 24 0 0 0-48 0h-64a24 24 0 0 0-48 0H32a8 8 0 0 1-8-8v-40h160v-24Z" opacity=".2"/><path d="m255.42 117l-14-35a15.93 15.93 0 0 0-14.84-10H192v-8a8 8 0 0 0-8-8H32a16 16 0 0 0-16 16v112a16 16 0 0 0 16 16h17a32 32 0 0 0 62 0h50a32 32 0 0 0 62 0h17a16 16 0 0 0 16-16v-64a7.9 7.9 0 0 0-.58-3M192 88h34.58l9.6 24H192ZM32 72h144v64H32Zm48 136a16 16 0 1 1 16-16a16 16 0 0 1-16 16m81-24h-50a32 32 0 0 0-62 0H32v-32h144v12.31A32.1 32.1 0 0 0 161 184m31 24a16 16 0 1 1 16-16a16 16 0 0 1-16 16m48-24h-17a32.06 32.06 0 0 0-31-24v-32h48Z"/></g></svg></div>
+          <h3>Ships free, risk-free</h3>
+          <p>Free shipping<sup>*</sup> and a 30-Day Money-Back Guarantee &mdash; try it at home before you commit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. How the builder works -->
+  <section class="sec sec--sand">
+    <div class="wrap">
+      <div class="sec__head sr">
+        <span class="eyebrow">How it works</span>
+        <h2>Build it in three steps</h2>
+        <p>Watch your bike &mdash; and your price &mdash; come together in real time.</p>
+      </div>
+      <div class="steps">
+        <div class="step sr"><div class="n tnum">1</div><h3>Pick your base</h3><p>Start with the classic 12 Sport or the lighter, adjustable 12 Pro.</p></div>
+        <div class="step sr"><div class="n tnum">2</div><h3>Make it theirs</h3><p>Choose frame color, wheels and grips. The bike updates live as you go.</p></div>
+        <div class="step sr"><div class="n tnum">3</div><h3>See the price, add to cart</h3><p>Your exact price shows as you build &mdash; then ships free<sup>*</sup> to your door.</p></div>
+      </div>
+      <p class="proofline sr"><svg class="ph" width="22" height="22" viewBox="0 0 256 256" aria-hidden="true" style="vertical-align:-4px"><g fill="currentColor"><path d="M216 56v56c0 96-88 120-88 120s-88-24-88-120V56a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8" opacity=".2"/><path d="M208 40H48a16 16 0 0 0-16 16v56c0 52.72 25.52 84.67 46.93 102.19c23.06 18.86 46 25.26 47 25.53a8 8 0 0 0 4.2 0c1-.27 23.91-6.67 47-25.53C198.48 196.67 224 164.72 224 112V56a16 16 0 0 0-16-16m0 72c0 37.07-13.66 67.16-40.6 89.42a129.3 129.3 0 0 1-39.4 22.2a128.3 128.3 0 0 1-38.92-21.81C61.82 179.51 48 149.3 48 112V56h160ZM82.34 141.66a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32l-56 56a8 8 0 0 1-11.32 0Z"/></g></svg> The builder shows your exact bike and price as you go &mdash; no surprises at checkout.</p>
+      <div class="ctacenter sr"><a class="btn btn--lg" href="https://striderbikes.com/bike-builder/">Start Building &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- 8. Choose your base (offer/pricing) -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec__head sr">
+        <span class="eyebrow">Choose your base</span>
+        <h2>Sport or Pro &mdash; both build to fit</h2>
+        <p>Same balance-first design. Pick your starting point, then make it yours.</p>
+      </div>
+      <div class="picks">
+        <div class="pick sr">
+          <div class="pick__media"><span class="pick__tag pick__tag--pop">Most popular</span><img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/1280w/products/155/777/12-Sport-Blue-Primary-Web-Image__78774.1776777698.jpg" alt="Strider 12 Sport balance bike in blue" loading="lazy"></div>
+          <div class="pick__body">
+            <h3>Strider&reg; 12 Sport</h3>
+            <div class="pick__price"><span class="amt tnum">$104.98</span> <span class="pre">to start</span></div>
+            <div class="pick__note">Before options &bull; price builds live</div>
+            <p class="pick__desc">The classic first Strider. Tool-free adjustable seat and bars, padded saddle, and the balance-first design millions of kids learned on.</p>
+            <a class="btn btn--wide" href="https://striderbikes.com/bike-builder/12-sport/">Build the 12 Sport &rarr;</a>
+          </div>
+        </div>
+        <div class="pick sr">
+          <div class="pick__media"><span class="pick__tag">Lighter &amp; adjustable</span><img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/1280w/products/201/694/Pro_BB__58598.1764719419.png" alt="Strider 12 Pro custom-built balance bike" loading="lazy"></div>
+          <div class="pick__body">
+            <h3>Strider&reg; 12 Pro</h3>
+            <div class="pick__price"><span class="amt tnum">$144.98</span> <span class="pre">to start</span></div>
+            <div class="pick__note">Before options &bull; price builds live</div>
+            <p class="pick__desc">Ultralight aluminum with more adjustability and premium components &mdash; for the rider who&rsquo;s ready to fly. Fully customizable, handlebar to wheels.</p>
+            <a class="btn btn--wide" href="https://striderbikes.com/bike-builder/12-pro/">Build the 12 Pro &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Grows-with-them journey -->
+  <section class="sec sec--sand">
+    <div class="wrap">
+      <div class="sec__head sr">
+        <span class="eyebrow">Made to grow with them</span>
+        <h2>From rocking to riding</h2>
+        <p>Your Strider adjusts through the balance years &mdash; and it&rsquo;s the start of a system built to carry your child all the way to pedaling.</p>
+      </div>
+      <div class="jrny sr">
+        <div class="jphase">
+          <div class="k">Start early</div>
+          <h3>Rocking</h3>
+          <p>Add the Rocking Base and even the littlest riders get comfortable in the saddle indoors &mdash; from around 6 months.</p>
+          <div class="arw">&rarr;</div>
+        </div>
+        <div class="jphase">
+          <div class="k">The core years</div>
+          <h3>Balancing</h3>
+          <p>Your built 12 Sport or Pro adjusts as they grow &mdash; striding, then gliding on two wheels with real confidence.</p>
+          <div class="arw">&rarr;</div>
+        </div>
+        <div class="jphase">
+          <div class="k">When they&rsquo;re ready</div>
+          <h3>Pedaling</h3>
+          <p>Move up to the convertible 14x when the time comes &mdash; pedals add to the same familiar ride. No training wheels, ever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Gallery -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec__head sr">
+        <span class="eyebrow">Real riders</span>
+        <h2>Smiles for miles</h2>
+      </div>
+      <div class="gal sr">
+        <figure class="wide"><img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/uploaded_images/12-sport-lifestyle-white-005-1-.jpg" alt="Toddler riding a Strider balance bike" loading="lazy"></figure>
+        <figure><img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/uploaded_images/2022-sc-bentonville-3yr-1421.jpg" alt="Young child gliding on a Strider" loading="lazy"></figure>
+        <figure><img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/uploaded_images/piper.jpg" alt="Kid smiling on a Strider bike" loading="lazy"></figure>
+        <figure><img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/uploaded_images/26-g-p-skate-park-12-comp-lifestyle-shoot-010.jpg" alt="Child riding a Strider at the skate park" loading="lazy"></figure>
+        <figure><img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/uploaded_images/2021-12-evelynmoore-0563.jpg" alt="Toddler on a Strider outdoors" loading="lazy"></figure>
+        <figure class="wide"><img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/image-manager/01-desmaraisjuly-large-res.jpg" alt="Family riding Strider balance bikes" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Testimonials (verbatim on-site quotes; honest attribution, no fabricated counts) -->
+  <section class="sec sec--sand">
+    <div class="wrap">
+      <div class="sec__head sr">
+        <span class="eyebrow">What parents say</span>
+        <h2>Loved by the families who ride them</h2>
+      </div>
+      <div class="quotes">
+        <div class="quote sr"><div class="mk">&ldquo;</div><p>This is the best thing ever invented!</p><div class="who">&mdash; Strider parent</div></div>
+        <div class="quote sr"><div class="mk">&ldquo;</div><p>This is the reason you get a Strider bike for your kid.</p><div class="who">&mdash; Strider parent</div></div>
+        <div class="quote sr"><div class="mk">&ldquo;</div><p>Balance first made the jump to a pedal bike almost effortless &mdash; no training wheels, no tears.</p><div class="who">&mdash; Strider parent</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Guarantee band -->
+  <section class="grnt">
+    <div class="wrap">
+      <svg class="ph" width="52" height="52" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M216 56v56c0 96-88 120-88 120s-88-24-88-120V56a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8" opacity=".2"/><path d="M208 40H48a16 16 0 0 0-16 16v56c0 52.72 25.52 84.67 46.93 102.19c23.06 18.86 46 25.26 47 25.53a8 8 0 0 0 4.2 0c1-.27 23.91-6.67 47-25.53C198.48 196.67 224 164.72 224 112V56a16 16 0 0 0-16-16m0 72c0 37.07-13.66 67.16-40.6 89.42a129.3 129.3 0 0 1-39.4 22.2a128.3 128.3 0 0 1-38.92-21.81C61.82 179.51 48 149.3 48 112V56h160ZM82.34 141.66a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32l-56 56a8 8 0 0 1-11.32 0Z"/></g></svg>
+      <div>
+        <h2>Try it for 30 days &mdash; on us.</h2>
+        <p>Every Strider bike is backed by our 30-Day Money-Back Guarantee. Build it, ride it, and if it&rsquo;s not the right fit, send it back.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. FAQ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec__head sr">
+        <span class="eyebrow">Good questions</span>
+        <h2>Before you build</h2>
+      </div>
+      <div class="faq sr">
+        <details><summary>Which Strider is right for my child&rsquo;s age?<span class="pm"></span></summary><div class="a">Most kids start on a 12-inch Strider somewhere between around 18 months and 5 years, and the adjustable seat and bars keep it fitting as they grow. The builder walks you through sizing &mdash; and if it isn&rsquo;t the right fit, you&rsquo;re covered by the 30-Day Money-Back Guarantee.</div></details>
+        <details><summary>Sport or Pro &mdash; what&rsquo;s the difference?<span class="pm"></span></summary><div class="a">The 12 Sport is the classic, most-popular first Strider &mdash; durable, adjustable, and ready to ride. The 12 Pro steps up to ultralight aluminum with more adjustability and premium components. Both use the same balance-first design; both fully customize in the builder.</div></details>
+        <details><summary>Does it really &ldquo;grow with them&rdquo;?<span class="pm"></span></summary><div class="a">Yes &mdash; the tool-free adjustable seat and handlebars raise as your child does, so one bike carries them through the balance years. And when they&rsquo;re ready to pedal, the convertible 14x lets pedals add to the same familiar ride.</div></details>
+        <details><summary>Why skip training wheels?<span class="pm"></span></summary><div class="a">Balance bikes teach the hardest part first &mdash; balancing &mdash; so the move to a pedal bike tends to be faster and more confident, with no training-wheel habits to unlearn. It&rsquo;s the approach that helped over 10 million kids learn to ride.</div></details>
+        <details><summary>How much does a built bike cost?<span class="pm"></span></summary><div class="a">The 12 Sport starts at $104.98 and the 12 Pro at $144.98 before options. As you choose colors, wheels and grips, the builder updates your exact price live &mdash; so what you see is what you pay.</div></details>
+        <details><summary>What about shipping and returns?<span class="pm"></span></summary><div class="a">Strider bikes ship free<sup>*</sup>, and every one is backed by a 30-Day Money-Back Guarantee. Build it, try it at home, and return it if it&rsquo;s not right.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Final CTA -->
+  <section class="final">
+    <div class="wrap sr">
+      <h2>Build the bike they&rsquo;ll <span class="u">learn to ride on.</span></h2>
+      <p>Customize a Strider&reg; that fits your kid today &mdash; and keeps fitting for years.</p>
+      <div><a class="btn btn--lg" href="https://striderbikes.com/bike-builder/">Build Your Strider &rarr;</a></div>
+      <div class="final__micro">Free shipping<sup>*</sup> &bull; 30-Day Money-Back Guarantee &bull; The original balance bike since 2007</div>
+    </div>
+  </section>
+
+  <!-- 15. Footer -->
+  <footer class="ftr">
+    <div class="logo">STRIDER<sup>&reg;</sup></div>
+    <div>The original balance bike, built for kids since 2007.</div>
+    <div class="fine"><sup>*</sup>Free shipping applies to Strider bikes shipped within the contiguous United States; see striderbikes.com for details. Starting prices shown are for the base build before options and are subject to change. The 30-Day Money-Back Guarantee applies to Strider bikes; full terms at striderbikes.com. Strider&reg; is a registered trademark of Strider Sports International, Inc.</div>
+  </footer>
+
+</div>
+
+<!-- Sticky mobile CTA (reparented to <body> in JS) -->
+<div class="strider-lp-scta" id="strider-scta">
+  <a class="s-build" href="https://striderbikes.com/bike-builder/">Build Your Strider</a>
+  <a class="s-quiz" href="https://striderbikes.com/bikequiz">Fit quiz</a>
+</div>
+
+<script>
+(function(){
+  var lp = document.querySelector('.strider-lp');
+  if(!lp) return;
+
+  /* Reparent sticky mobile CTA to body (BigCommerce theme transform-stacking safety) */
+  try{
+    var scta = document.getElementById('strider-scta');
+    if(scta && scta.parentNode !== document.body){ document.body.appendChild(scta); }
+  }catch(e){}
+
+  /* Show sticky CTA once hero scrolls out of view */
+  try{
+    var hero = lp.querySelector('.hero');
+    if(hero && 'IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(ents){
+        ents.forEach(function(en){
+          document.body.classList.toggle('strider-scta-on', !en.isIntersecting);
+        });
+      }, {threshold:0});
+      io.observe(hero);
+    } else { document.body.classList.add('strider-scta-on'); }
+  }catch(e){ document.body.classList.add('strider-scta-on'); }
+
+  /* Scroll reveal with no-content-hidden failsafe */
+  try{
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = lp.querySelectorAll('.sr');
+    if(!reduce && 'IntersectionObserver' in window && items.length){
+      lp.classList.add('sr-on');
+      var revealAll = function(){ items.forEach(function(el){ el.classList.add('in'); }); };
+      var ro = new IntersectionObserver(function(ents,obs){
+        ents.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); obs.unobserve(en.target); } });
+      }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+      items.forEach(function(el){ ro.observe(el); });
+      setTimeout(revealAll, 1500); /* failsafe: never leave content hidden */
+    }
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
