@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex">
 </head>
 <body>
-<!-- Strider "Build Your Strider" LP - preview build v2 -->
+<!-- Strider "Build Your Strider" LP - preview build v3 -->
 <script>/* viewport guard: ensure mobile width even if the host/preview lacks one */
 (function(){try{if(!document.querySelector('meta[name="viewport"]')){var m=document.createElement('meta');m.name='viewport';m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');(document.head||document.documentElement).appendChild(m);}}catch(e){}})();
 </script>
@@ -557,6 +557,49 @@ body.strider-scta-on .strider-lp-scta{display:flex}
       setTimeout(revealAll, 1500); /* failsafe: never leave content hidden */
     }
   }catch(e){}
+})();
+</script>
+
+<script>
+/* Build Your Strider LP - funnel instrumentation (no-op-safe: fires to dataLayer/gtag/posthog only if present).
+   Also FORWARDS utm_* + lp id onto every builder/quiz link so downstream add-to-cart is attributable to the LP path. */
+(function(){
+  var LP="build-your-strider";
+  var qp; try{ qp=new URLSearchParams(location.search); }catch(e){ qp=null; }
+  var KEYS=["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid"];
+  var UTM={}; if(qp){ KEYS.forEach(function(k){ var v=qp.get(k); if(v){ UTM[k]=v; } }); }
+  function track(ev, extra){
+    var p={lp:LP}, k; extra=extra||{}; for(k in extra){ p[k]=extra[k]; } for(k in UTM){ p[k]=UTM[k]; }
+    try{ (window.dataLayer=window.dataLayer||[]).push({event:ev, lp:LP, detail:p}); }catch(e){}
+    try{ if(typeof gtag==="function"){ gtag("event", ev, p); } }catch(e){}
+    try{ if(window.posthog && posthog.capture){ posthog.capture(ev, p); } }catch(e){}
+  }
+  function fwd(href){
+    try{ var u=new URL(href, location.href); u.searchParams.set("lp", LP);
+      for(var k in UTM){ if(!u.searchParams.has(k)){ u.searchParams.set(k, UTM[k]); } }
+      return u.toString(); }catch(e){ return href; }
+  }
+  function label(a){
+    var h=a.getAttribute("href")||"";
+    if(/bike-quiz/.test(h)){ return "quiz"; }
+    if(a.closest(".hero")){ return "hero"; }
+    if(a.closest(".hdr")){ return "header"; }
+    if(a.closest(".picks")){ return /12-pro/.test(a.href)?"pricing_pro":"pricing_sport"; }
+    if(a.closest(".final")){ return "final"; }
+    if((a.className||"").indexOf("s-build")>-1){ return "sticky"; }
+    if(a.closest(".sec--sand") && /building/i.test(a.textContent||"")){ return "howitworks"; }
+    return "cta";
+  }
+  var roots=[document.querySelector(".strider-lp"), document.getElementById("strider-scta")], i;
+  for(i=0;i<roots.length;i++){ (function(root){ if(!root){ return; }
+    var links=root.querySelectorAll('a[href*="bike-builder"], a[href*="bike-quiz"]');
+    Array.prototype.forEach.call(links, function(a){
+      var lab=label(a), quiz=(lab==="quiz");
+      try{ a.setAttribute("href", fwd(a.getAttribute("href"))); }catch(e){}
+      a.addEventListener("click", function(){ track(quiz?"lp_quiz_click":"lp_cta_click", {location:lab}); });
+    });
+  })(roots[i]); }
+  track("lp_pageview");
 })();
 </script>
 
