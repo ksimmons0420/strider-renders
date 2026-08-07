@@ -19,7 +19,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBFMHHJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<!-- Strider "Build Your Strider" LP - preview build v4: GTM-KBFMHHJ added -->
+<!-- Strider "Build Your Strider" LP - preview build v6: GTM + CTA mobile-only + 3D floating-bar buttons -->
 <script>/* viewport guard: ensure mobile width even if the host/preview lacks one */
 (function(){try{if(!document.querySelector('meta[name="viewport"]')){var m=document.createElement('meta');m.name='viewport';m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');(document.head||document.documentElement).appendChild(m);}}catch(e){}})();
 </script>
@@ -238,10 +238,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.4em;
   font-family:"Libre Franklin",sans-serif;font-weight:900;font-size:16px;min-height:52px;border-radius:999px;
   text-decoration:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  box-shadow:0 4px 0 #231F20;transition:transform .08s ease, box-shadow .08s ease;
 }
 .strider-lp-scta .s-build{background:#FFCD03;color:#231F20;border:2px solid #231F20;flex:1.6}
 .strider-lp-scta .s-quiz{background:#fff;color:#231F20;border:2px solid #231F20}
-.strider-lp-scta a:active{transform:translateY(2px)}
+.strider-lp-scta a:active{transform:translateY(3px);box-shadow:0 1px 0 #231F20}
 /* bar is MOBILE-ONLY: show rule + footer clearance live in the max-width:620px query below */
 
 /* Scroll reveal (failsafe: only hides when JS enables it) */
