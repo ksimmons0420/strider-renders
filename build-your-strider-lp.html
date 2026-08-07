@@ -242,7 +242,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .strider-lp-scta .s-build{background:#FFCD03;color:#231F20;border:2px solid #231F20;flex:1.6}
 .strider-lp-scta .s-quiz{background:#fff;color:#231F20;border:2px solid #231F20}
 .strider-lp-scta a:active{transform:translateY(2px)}
-body.strider-scta-on .strider-lp-scta{display:flex}
+/* bar is MOBILE-ONLY: show rule + footer clearance live in the max-width:620px query below */
 
 /* Scroll reveal (failsafe: only hides when JS enables it) */
 .strider-lp.sr-on .sr{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
@@ -267,7 +267,8 @@ body.strider-scta-on .strider-lp-scta{display:flex}
   .strider-lp .bgrid{grid-template-columns:1fr}
   .strider-lp .hdr .btn{display:none}
   .strider-lp .final .wrap{padding:52px 20px}
-  body.strider-scta-on{padding-bottom:80px}
+  body.strider-scta-on .strider-lp-scta{display:flex}
+  body.strider-scta-on{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
 }
 @media (prefers-reduced-motion:reduce){
   .strider-lp *{animation:none!important;transition:none!important}
