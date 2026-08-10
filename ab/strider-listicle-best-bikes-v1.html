@@ -388,7 +388,7 @@ posthog.init('phc_B9C6UbZJaK8e2Y8fJmXKqVmogbdiNogHcyJyUCGfdPB9', { api_host: 'ht
     var v = null;
     try { v = window.posthog && window.posthog.getFeatureFlag && window.posthog.getFeatureFlag('strider-listicle-best-bikes'); } catch(e){}
     if (v === 'variant_b') {
-      try { document.body.classList.add('strider-var-b');var c=document.getElementById('strider-hero-cta');if(c)c.textContent='See the top pick \u2193';var sk=document.getElementById('strider-lp-stickycta');if(sk){sk.innerHTML='<a class="strider-lp-shop" data-product="12 Sport" data-cta="sticky" href="https://striderbikes.com/balance-bikes/12-sport/" style="flex:1;text-align:center">Shop the 12 Sport \u00b7 $169.99</a><a class="strider-lp-quiz" data-cta="sticky" href="https://striderbikes.com/bikequiz" style="flex:1;text-align:center">Take the quiz</a>';sk.style.display='flex';sk.style.gap='8px';} } catch(e){}
+      try { document.body.classList.add('strider-var-b');var c=document.getElementById('strider-hero-cta');if(c)c.textContent='See the top pick \u2193';var sk=document.getElementById('strider-lp-stickycta');if(sk){sk.innerHTML='<a class="strider-lp-shop" data-product="12 Sport" data-cta="sticky" href="https://striderbikes.com/balance-bikes/12-sport/" style="flex:1;text-align:center">Shop the 12 Sport \u00b7 $169.99</a><a class="strider-lp-quiz" data-cta="sticky" href="https://striderbikes.com/bikequiz" style="flex:1;text-align:center">Take the quiz</a>';} } catch(e){}
     }
     track('experiment_assigned', { flag: 'strider-listicle-best-bikes', variant: v || 'control' });
   }
