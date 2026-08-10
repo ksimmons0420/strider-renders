@@ -1,0 +1,598 @@
+<meta charset="utf-8">
+<!-- REV 2026-06-17 (r2, Strider CS/Web feedback): shipping-speed verbiage removed; video end-screen suggestions restored; guarantee/age/14x copy edits. See CHANGELOG-2026-06-17.md -->
+<script>/* viewport guard (v1): ensure mobile width even if the host/preview lacks a viewport meta; idempotent, injects into <head> */
+(function(){try{if(!document.querySelector('meta[name="viewport"]')){var m=document.createElement("meta");m.name="viewport";m.setAttribute("content","width=device-width, initial-scale=1, viewport-fit=cover");(document.head||document.documentElement).appendChild(m);}}catch(e){}})();</script>
+<!--
+  STRIDER AGE-BAND LP &middot; "The Right First Bike for Your 1-Year-Old"
+  VERSION 2026-06-07 &middot; build v4-1yo +icons (from 2yo master - lifestyle hero, ride video,
+  real reviews, 30-day guarantee + 2-yr warranty risk-reversal, PostHog A/B framework)
+  Search this file for "build v4" to confirm the latest paste.
+
+  DEPLOY: self-contained. Paste into a BigCommerce Web Page (HTML view) OR drop into
+  Chamber's Lovable project as a single component. No deps but Google Fonts + (optional)
+  PostHog + a click-to-play YouTube facade. All classes scoped to .strider-lp-*.
+
+  ENCODING: pure ASCII (entities/SVG only) + <meta charset> so it renders identically
+  on every device and survives any CMS paste.
+
+  BUILT BY: Chamber Media (internal). Customer-facing brand = Strider&reg;.
+  COMPLIANCE: Strider&reg; first use + Title Case; "ideal for most" age framing; no
+  exaggerated developmental claims; 14x = "adds pedals to the same bike" (never forced
+  switch). Reviews are REAL/verbatim from the 12 Sport PDP. Offer terms verified on
+  Strider's warranty page (30-Day Satisfaction Guarantee + 2-Year Limited Warranty).
+
+  A/B: WIRED LIVE - PostHog project "Strider Bikes" (id 458796), flag "strider-age-band-1yo"
+  (control / variant_b, 50/50, 100% enrolled). First experiment = hero CTA copy (see script).
+
+  TO MAKE 1yo / 3yo: swap {AGE}, hero product, price, specs, product image, reviews.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+  .strider-lp * { box-sizing: border-box; margin: 0; padding: 0; }
+  .strider-lp {
+    --yellow: #FFCD03; --blue: #004CFF; --ink: #111111; --muted: #555a61;
+    --line: #e7e9ee; --bg-soft: #f7f8fa;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background: #fff; overflow-x: hidden;
+  }
+  .strider-lp h1, .strider-lp h2, .strider-lp h3 {
+    font-family: 'Libre Franklin', Arial, Helvetica, sans-serif;
+    line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); font-weight: 900;
+  }
+  .strider-lp p { font-size: 1.05rem; }
+  .strider-lp a { color: inherit; text-decoration: none; }
+  .strider-lp__wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+  .strider-lp .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: #FFCD03; color: #000; font-family: 'Libre Franklin', Arial, sans-serif;
+    font-weight: 800; font-size: 1.05rem; letter-spacing: 0.01em; padding: 16px 26px;
+    border-radius: 12px; border: 0; cursor: pointer; min-height: 52px;
+    transition: transform .12s ease, box-shadow .12s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+  }
+  .strider-lp .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,0.20); }
+  .strider-lp .btn--ghost { background: rgba(255,255,255,0.12); color: #fff; border: 2px solid rgba(255,255,255,0.7); box-shadow: none; }
+  .strider-lp .btn--ghost-dark { background: #fff; color: #111; border: 2px solid #111; box-shadow: none; }
+  .strider-lp .btn--block { width: 100%; }
+
+  .strider-lp__promo { background: #111; color: #fff; text-align: center; font-size: .92rem; font-weight: 600; padding: 9px 16px; }
+  .strider-lp__promo strong { color: #FFCD03; }
+
+  .strider-lp__head { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .strider-lp__head-in { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .strider-lp__logo { height: 26px; width: auto; display: block; }
+  .strider-lp__head .btn { padding: 11px 18px; min-height: 0; font-size: .95rem; }
+
+  /* ---------- Lifestyle hero ---------- */
+  .strider-lp__hero { position: relative; min-height: 580px; display: flex; align-items: center;
+    background: #111 url('https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/1280w/uploaded_images/22-rb-db-9349.jpg') center 42%/cover no-repeat;
+    padding: 64px 0; }
+  .strider-lp__hero::before { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(8,10,16,0.86) 0%, rgba(8,10,16,0.55) 46%, rgba(8,10,16,0.08) 100%), linear-gradient(0deg, rgba(8,10,16,0.55), transparent 55%); }
+  .strider-lp__hero-in { position: relative; z-index: 1; }
+  .strider-lp__hero-copy { max-width: 600px; color: #fff; }
+  .strider-lp__hero-copy h1, .strider-lp__hero-copy p, .strider-lp__hero-copy li { color: #fff; }
+  .strider-lp__eyebrow { display: inline-block; font-family: 'Libre Franklin', sans-serif; font-weight: 800; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: #111; background: #FFCD03; padding: 6px 12px; border-radius: 6px; margin-bottom: 16px; }
+  .strider-lp__hero h1 { font-size: clamp(2.1rem, 5vw, 3.5rem); text-shadow: 0 2px 18px rgba(0,0,0,0.5); }
+  .strider-lp__hero h1 .u { color: #FFCD03; }
+  .strider-lp__sub { font-size: 1.18rem; margin: 16px 0 20px; max-width: 32em; text-shadow: 0 1px 10px rgba(0,0,0,0.55); }
+  .strider-lp__sub b { font-weight: 700; }
+  .strider-lp__bullets { list-style: none; margin: 0 0 24px; display: grid; gap: 9px; }
+  .strider-lp__bullets li { position: relative; padding-left: 30px; font-size: 1.05rem; font-weight: 600; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
+  .strider-lp__bullets li svg { position: absolute; left: 0; top: 3px; }
+  .strider-lp__cta-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .strider-lp__reassure { font-size: .92rem; color: #e9ecf2; margin-top: 14px; }
+  .strider-lp__reassure b { color: #fff; }
+  .strider-lp__trustchip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); color: #fff; border-radius: 999px; padding: 8px 15px; font-size: .9rem; font-weight: 700; backdrop-filter: blur(6px); }
+  .strider-lp__stars { color: #FFCD03; letter-spacing: 1px; }
+
+  /* ---------- Risk-reversal strip ---------- */
+  .strider-lp__guarantee { background: #fffbe6; border-bottom: 1px solid #f1e6a8; }
+  .strider-lp__guarantee-in { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 30px; padding: 15px 16px; text-align: center; }
+  .strider-lp__greward { display: inline-flex; align-items: center; gap: 9px; font-weight: 700; font-size: .96rem; color: #1a1a1a; }
+  .strider-lp__greward svg { flex: 0 0 auto; }
+
+  /* ---------- Trust strip ---------- */
+  .strider-lp__stats { background: #111; color: #fff; }
+  .strider-lp__stats-in { display: grid; grid-template-columns: repeat(4,1fr); text-align: center; }
+  .strider-lp__stat { padding: 22px 12px; border-right: 1px solid rgba(255,255,255,0.12); }
+  .strider-lp__stat:last-child { border-right: 0; }
+  .strider-lp__stat b { font-family: 'Libre Franklin', sans-serif; font-size: 1.6rem; color: #FFCD03; display: block; line-height: 1.1; }
+  .strider-lp__stat span { font-size: .86rem; color: #cfd2d8; }
+
+  .strider-lp__section { padding: 56px 0; }
+  .strider-lp__section--soft { background: var(--bg-soft); }
+  .strider-lp__kicker { color: #004CFF; font-weight: 800; font-family: 'Libre Franklin',sans-serif; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; text-align: center; }
+  .strider-lp__h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); text-align: center; margin: 10px 0 8px; }
+  .strider-lp__lead { text-align: center; color: var(--muted); max-width: 40em; margin: 0 auto 34px; font-size: 1.08rem; }
+
+  /* ---------- Product cards ---------- */
+  .strider-lp__picks { display: grid; grid-template-columns: 1.25fr 1fr; gap: 22px; }
+  .strider-lp__card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 24px; box-shadow: 0 6px 26px rgba(15,23,42,0.07); display: flex; flex-direction: column; }
+  .strider-lp__card--hero { border: 2px solid #FFCD03; box-shadow: 0 14px 40px rgba(255,205,3,0.20); }
+  .strider-lp__card-top { display: flex; gap: 18px; align-items: center; }
+  .strider-lp__card img { width: 130px; height: auto; flex: 0 0 auto; }
+  .strider-lp__tag { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: #FFCD03; color: #111; padding: 4px 9px; border-radius: 5px; margin-bottom: 8px; }
+  .strider-lp__tag--alt { background: #eef2ff; color: #004CFF; }
+  .strider-lp__card h3 { font-size: 1.32rem; }
+  .strider-lp__price { font-family: 'Libre Franklin',sans-serif; font-weight: 800; font-size: 1.5rem; margin: 6px 0 2px; }
+  .strider-lp__price small { font-size: .82rem; color: var(--muted); font-weight: 600; }
+  .strider-lp__spec { list-style: none; margin: 14px 0 18px; display: grid; gap: 7px; }
+  .strider-lp__spec li { position: relative; padding-left: 24px; font-size: .98rem; color: #2a2d33; }
+  .strider-lp__spec li::before { content: "\2713"; position: absolute; left: 0; color: #004CFF; font-weight: 800; }
+  .strider-lp__card .btn { margin-top: auto; }
+  .strider-lp__cardrate { font-size: .86rem; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  /* ---------- Video ---------- */
+  .strider-lp__video { max-width: 860px; margin: 0 auto; }
+  .strider-lp__videoframe { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; cursor: pointer; box-shadow: 0 18px 50px rgba(0,0,0,0.22); background: #000 center/cover no-repeat; }
+  .strider-lp__videoframe::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.18); transition: background .2s; }
+  .strider-lp__videoframe:hover::after { background: rgba(0,0,0,0.05); }
+  .strider-lp__play { position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 84px; height: 84px; border-radius: 50%; background: #FFCD03; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .strider-lp__play svg { margin-left: 5px; }
+  .strider-lp__videoframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------- Benefits ---------- */
+  .strider-lp__benefits { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .strider-lp__benefit { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 26px 22px; box-shadow: 0 6px 22px rgba(15,23,42,0.06); }
+  .strider-lp__ico { width: 46px; height: 46px; border-radius: 12px; background: linear-gradient(135deg,#FFCD03,#ffe169); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .strider-lp__benefit h3 { font-size: 1.18rem; margin-bottom: 7px; }
+  .strider-lp__benefit p { font-size: .99rem; color: var(--muted); }
+
+  /* ---------- Journey ---------- */
+  .strider-lp__journey { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+  .strider-lp__stage { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px; text-align: center; box-shadow: 0 6px 22px rgba(15,23,42,0.06); display:flex; flex-direction:column; }
+  .strider-lp__stage img { width: 100%; max-width: 150px; height: auto; margin: 0 auto 12px; }
+  .strider-lp__stage .age { font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #004CFF; }
+  .strider-lp__stage h3 { font-size: 1.1rem; margin: 4px 0 6px; }
+  .strider-lp__stage p { font-size: .92rem; color: var(--muted); margin-bottom: 14px; }
+  .strider-lp__stage a { margin-top: auto; font-weight: 800; color: #004CFF; border-bottom: 2px solid rgba(0,76,255,.25); display:inline-block; align-self:center; }
+  .strider-lp__stage--mid { border: 2px solid #FFCD03; }
+
+  /* ---------- Reviews ---------- */
+  .strider-lp__reviews { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .strider-lp__review { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px; box-shadow: 0 6px 22px rgba(15,23,42,0.06); display: flex; flex-direction: column; }
+  .strider-lp__review .rs { color: #FFB400; letter-spacing: 2px; font-size: 1.05rem; }
+  .strider-lp__review p { font-size: 1rem; color: #2a2d33; margin: 12px 0 16px; }
+  .strider-lp__review .who { margin-top: auto; font-weight: 700; font-size: .92rem; }
+  .strider-lp__review .who span { color: var(--muted); font-weight: 600; }
+  .strider-lp__ratebar { text-align: center; margin-bottom: 30px; font-weight: 700; }
+  .strider-lp__ratebar b { font-size: 2rem; font-family: 'Libre Franklin',sans-serif; }
+  .strider-lp__ratebar .rs { color: #FFB400; letter-spacing: 2px; font-size: 1.2rem; }
+
+  /* ---------- Proof ---------- */
+  .strider-lp__proof { background: linear-gradient(135deg,#004CFF,#0033b0); color: #fff; border-radius: 22px; padding: 44px 30px; text-align: center; }
+  .strider-lp__proof h2 { color: #fff; font-size: clamp(1.6rem,3.4vw,2.3rem); }
+  .strider-lp__proof p { max-width: 44em; margin: 14px auto 0; color: #dce5ff; font-size: 1.1rem; }
+  .strider-lp__proof .src { font-size: .85rem; color: #aebdf0; margin-top: 8px; }
+
+  /* ---------- FAQ ---------- */
+  .strider-lp__faq { max-width: 760px; margin: 0 auto; }
+  .strider-lp__faq details { border: 1px solid var(--line); border-radius: 12px; padding: 4px 18px; margin-bottom: 12px; background: #fff; }
+  .strider-lp__faq summary { font-family: 'Libre Franklin',sans-serif; font-weight: 700; font-size: 1.06rem; cursor: pointer; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  .strider-lp__faq summary::-webkit-details-marker { display: none; }
+  .strider-lp__faq summary::after { content: "+"; color: #004CFF; font-weight: 800; font-size: 1.4rem; line-height: 1; }
+  .strider-lp__faq details[open] summary::after { content: "\2013"; }
+  .strider-lp__faq p { padding: 0 0 16px; color: var(--muted); font-size: 1rem; }
+
+  /* ---------- Final ---------- */
+  .strider-lp__final { background: #FFCD03; text-align: center; padding: 56px 0; }
+  .strider-lp__final h2 { font-size: clamp(1.8rem,4vw,2.7rem); }
+  .strider-lp__final p { font-size: 1.12rem; margin: 12px auto 24px; max-width: 34em; color: #1a1a1a; }
+  .strider-lp__final .btn { background: #111; color: #fff; }
+  .strider-lp__final .fine { font-size: .9rem; color: #4a4326; margin-top: 16px; }
+
+  /* ---------- Footer ---------- */
+  .strider-lp__foot { background: #111; color: #aeb2ba; padding: 34px 0; font-size: .9rem; }
+  .strider-lp__foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; align-items: center; }
+  .strider-lp__foot a { color: #fff; font-weight: 600; }
+  .strider-lp__foot-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .strider-lp__tm { width: 100%; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 16px; font-size: .82rem; color: #8b9098; }
+
+  /* ---------- Sticky mobile CTA (reparented; literal hex) ---------- */
+  .strider-lp-stickycta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9000; display: none; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,0.88); backdrop-filter: blur(14px) saturate(160%); border-top: 1px solid #e7e9ee; box-shadow: 0 -6px 20px rgba(0,0,0,0.10); }
+  .strider-lp-stickycta a { flex: 1; display: flex; align-items: center; justify-content: center; background: #FFCD03; color: #000; font-family: 'Libre Franklin',sans-serif; font-weight: 800; border-radius: 12px; padding: 14px; font-size: 1rem; min-height: 50px; }
+
+  @media (max-width: 900px) {
+    .strider-lp__hero { min-height: 0; padding: 48px 0; background-position: center 25%; }
+    .strider-lp__hero::before { background: linear-gradient(0deg, rgba(8,10,16,0.92) 8%, rgba(8,10,16,0.55) 60%, rgba(8,10,16,0.35) 100%); }
+    .strider-lp__picks, .strider-lp__benefits, .strider-lp__journey, .strider-lp__reviews { grid-template-columns: 1fr; }
+    .strider-lp__stats-in { grid-template-columns: repeat(2,1fr); }
+    .strider-lp__stat:nth-child(2) { border-right: 0; }
+    .strider-lp__stat:nth-child(1), .strider-lp__stat:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .strider-lp-stickycta { display: flex; }
+    .strider-lp__head .btn { display: none; }
+    .strider-lp__foot-in { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 480px) { .strider-lp__card-top { flex-direction: column; text-align: center; } .strider-lp__card img { width: 150px; } }
+
+  /* ===== UX/UI enhancement pass (ui-ux-pro-max) :: ux-enhance-v1 ===== */
+  .strider-lp a, .strider-lp button, .strider-lp summary, .strider-lp__videoframe { touch-action: manipulation; }
+  .strider-lp .btn { -webkit-tap-highlight-color: transparent; }
+  .strider-lp a:focus-visible, .strider-lp button:focus-visible, .strider-lp summary:focus-visible, .strider-lp .btn:focus-visible, .strider-lp__videoframe:focus-visible { outline: 3px solid #004CFF; outline-offset: 3px; border-radius: 10px; }
+  .strider-lp-stickycta a:focus-visible { outline: 3px solid #111; outline-offset: -4px; }
+  .strider-lp .btn:active { transform: scale(.97); }
+  .strider-lp summary { cursor: pointer; }
+  .strider-lp__price, .strider-lp__pricetag span, .lst-item h3 .pr, table.lst-table .pr, .strider-lp__ratebar b { font-variant-numeric: tabular-nums; }
+  .gift-gcard, .rsn-help a.card { transition: transform .18s ease, box-shadow .18s ease; }
+  .gift-gcard:hover, .rsn-help a.card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(15,23,42,.12); }
+  table.lst-table a:hover { filter: brightness(.95); }
+  @media (max-width: 900px) { .strider-lp { padding-bottom: 78px; } }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+    html.sr-on .sr { opacity: 0; transform: translateY(16px); transition: opacity .55s ease-out, transform .55s ease-out; }
+    html.sr-on .sr.sr-in { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .strider-lp *, .strider-lp-stickycta * { animation: none !important; transition: none !important; } }
+
+  /* ===== Phosphor duotone icon system (demo) :: icons-v1 ===== */
+  .strider-lp .ph { display:inline-block; vertical-align:middle; flex:0 0 auto; }
+  .strider-lp .ph-duo { color:#004CFF; }                         /* detail = blue */
+  .strider-lp .ph-duo path[opacity]{ opacity:1; fill:#FFCD03; }  /* fill shape = yellow */
+  .strider-lp .ph-duo-b { color:#004CFF; }                       /* guarantee strip: blue duotone */
+  .strider-lp .ph-duo-b path[opacity]{ opacity:.16; }
+  .strider-lp__ico { background:#e9f0ff; }                        /* benefit tile: soft blue so the yellow+blue pops */
+</style>
+
+<div class="strider-lp">
+
+  <div class="strider-lp__promo">&#9733;&#9733;&#9733;&#9733;&#9733; The original balance bike since <strong>2007</strong> &middot; Backed by a 30-Day Money-Back Guarantee</div>
+
+  <header class="strider-lp__head">
+    <div class="strider-lp__wrap strider-lp__head-in">
+      <a href="https://striderbikes.com/"><img class="strider-lp__logo" src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/strider-logo_1769528772__73164.original.png" alt="Strider Bikes"></a>
+      <a class="btn strider-lp-shop" data-product="Rocking Bike" data-cta="header" href="https://striderbikes.com/rocking-bikes/12-sport/">Shop the Rocking Bike</a>
+    </div>
+  </header>
+
+  <!-- HERO (lifestyle) -->
+  <section class="strider-lp__hero">
+    <div class="strider-lp__wrap strider-lp__hero-in">
+      <div class="strider-lp__hero-copy">
+        <span class="strider-lp__eyebrow">For your 1-year-old</span>
+        <h1>The right first bike for your <span class="u">1-year-old</span>.</h1>
+        <p class="strider-lp__sub">Before they can even walk, they can ride. The <b>Strider&reg; 2-in-1 Rocking Bike</b> rocks like a cradle, then rolls the moment they&rsquo;re ready &mdash; building balance from as young as 6 months.</p>
+        <ul class="strider-lp__bullets">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#FFCD03"/><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" fill="#111" transform="scale(.8) translate(2.4 2.4)"/></svg>Starts as young as 6 months &mdash; a secure rocking base for the littlest riders</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#FFCD03"/><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" fill="#111" transform="scale(.8) translate(2.4 2.4)"/></svg>Rocks in place first, then detaches and rolls when they walk</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#FFCD03"/><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" fill="#111" transform="scale(.8) translate(2.4 2.4)"/></svg>Lightweight 6.7 lbs &mdash; grows with them all the way to age 4</li>
+        </ul>
+        <div class="strider-lp__cta-row">
+          <a class="btn strider-lp-shop" id="strider-hero-cta" data-product="Rocking Bike" data-cta="hero" href="https://striderbikes.com/rocking-bikes/12-sport/">Shop the Rocking Bike &mdash; $299.98</a>
+          <a class="btn btn--ghost strider-lp-quiz" data-cta="hero_quiz" href="https://striderbikes.com/bikequiz">Not sure? Take the 30-sec quiz</a>
+        </div>
+        <p class="strider-lp__reassure"><b>30-day money-back guarantee</b> &middot; 2-year warranty &middot; Free shipping</p>
+        <div class="strider-lp__trustchip"><span class="strider-lp__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4M+ bikes sold &middot; 10M+ kids taught to ride</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Risk-reversal strip -->
+  <div class="strider-lp__guarantee">
+    <div class="strider-lp__wrap strider-lp__guarantee-in">
+      <span class="strider-lp__greward"><svg class="ph ph-duo-b" width="22" height="22" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M216 56v56c0 96-88 120-88 120s-88-24-88-120V56a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8" opacity=".2"/><path d="M208 40H48a16 16 0 0 0-16 16v56c0 52.72 25.52 84.67 46.93 102.19c23.06 18.86 46 25.26 47 25.53a8 8 0 0 0 4.2 0c1-.27 23.91-6.67 47-25.53C198.48 196.67 224 164.72 224 112V56a16 16 0 0 0-16-16m0 72c0 37.07-13.66 67.16-40.6 89.42a129.3 129.3 0 0 1-39.4 22.2a128.3 128.3 0 0 1-38.92-21.81C61.82 179.51 48 149.3 48 112V56h160ZM82.34 141.66a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32l-56 56a8 8 0 0 1-11.32 0Z"/></g></svg> 30-Day Money-Back Guarantee</span>
+      <span class="strider-lp__greward"><svg class="ph ph-duo-b" width="22" height="22" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M232 128c0 12.51-17.82 21.95-22.68 33.69c-4.68 11.32 1.42 30.65-7.78 39.85s-28.53 3.1-39.85 7.78C150 214.18 140.5 232 128 232s-22-17.82-33.69-22.68c-11.32-4.68-30.65 1.42-39.85-7.78s-3.1-28.53-7.78-39.85C41.82 150 24 140.5 24 128s17.82-22 22.68-33.69c4.68-11.31-1.42-30.65 7.78-39.85s28.54-3.1 39.85-7.78C106.05 41.82 115.5 24 128 24s22 17.82 33.69 22.68c11.32 4.68 30.65-1.42 39.85 7.78s3.1 28.53 7.78 39.85C214.18 106.05 232 115.5 232 128" opacity=".2"/><path d="M225.86 102.82c-3.77-3.94-7.67-8-9.14-11.57c-1.36-3.27-1.44-8.69-1.52-13.94c-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52c-3.56-1.47-7.63-5.37-11.57-9.14C146.28 23.51 138.44 16 128 16s-18.27 7.51-25.18 14.14c-3.94 3.77-8 7.67-11.57 9.14c-3.25 1.36-8.69 1.44-13.94 1.52c-9.76.15-20.82.31-28.51 8s-7.8 18.75-8 28.51c-.08 5.25-.16 10.67-1.52 13.94c-1.47 3.56-5.37 7.63-9.14 11.57C23.51 109.72 16 117.56 16 128s7.51 18.27 14.14 25.18c3.77 3.94 7.67 8 9.14 11.57c1.36 3.27 1.44 8.69 1.52 13.94c.15 9.76.31 20.82 8 28.51s18.75 7.85 28.51 8c5.25.08 10.67.16 13.94 1.52c3.56 1.47 7.63 5.37 11.57 9.14c6.9 6.63 14.74 14.14 25.18 14.14s18.27-7.51 25.18-14.14c3.94-3.77 8-7.67 11.57-9.14c3.27-1.36 8.69-1.44 13.94-1.52c9.76-.15 20.82-.31 28.51-8s7.85-18.75 8-28.51c.08-5.25.16-10.67 1.52-13.94c1.47-3.56 5.37-7.63 9.14-11.57c6.63-6.9 14.14-14.74 14.14-25.18s-7.51-18.27-14.14-25.18m-11.55 39.29c-4.79 5-9.75 10.17-12.38 16.52c-2.52 6.1-2.63 13.07-2.73 19.82c-.1 7-.21 14.33-3.32 17.43s-10.39 3.22-17.43 3.32c-6.75.1-13.72.21-19.82 2.73c-6.35 2.63-11.52 7.59-16.52 12.38S132 224 128 224s-9.15-4.92-14.11-9.69s-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73c-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82c-2.63-6.35-7.59-11.52-12.38-16.52S32 132 32 128s4.92-9.15 9.69-14.11s9.75-10.17 12.38-16.52c2.52-6.1 2.63-13.07 2.73-19.82c.1-7 .21-14.33 3.32-17.43s10.39-3.22 17.43-3.32c6.75-.1 13.72-.21 19.82-2.73c6.35-2.63 11.52-7.59 16.52-12.38S124 32 128 32s9.15 4.92 14.11 9.69s10.17 9.75 16.52 12.38c6.1 2.52 13.07 2.63 19.82 2.73c7 .1 14.33.21 17.43 3.32s3.22 10.39 3.32 17.43c.1 6.75.21 13.72 2.73 19.82c2.63 6.35 7.59 11.52 12.38 16.52S224 124 224 128s-4.92 9.15-9.69 14.11m-40.65-43.77a8 8 0 0 1 0 11.32l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 0"/></g></svg> 2-Year Limited Warranty</span>
+      <span class="strider-lp__greward"><svg class="ph ph-duo-b" width="22" height="22" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M248 120v64a8 8 0 0 1-8 8h-24a24 24 0 0 0-48 0h-64a24 24 0 0 0-48 0H32a8 8 0 0 1-8-8v-40h160v-24Z" opacity=".2"/><path d="m255.42 117l-14-35a15.93 15.93 0 0 0-14.84-10H192v-8a8 8 0 0 0-8-8H32a16 16 0 0 0-16 16v112a16 16 0 0 0 16 16h17a32 32 0 0 0 62 0h50a32 32 0 0 0 62 0h17a16 16 0 0 0 16-16v-64a7.9 7.9 0 0 0-.58-3M192 88h34.58l9.6 24H192ZM32 72h144v64H32Zm48 136a16 16 0 1 1 16-16a16 16 0 0 1-16 16m81-24h-50a32 32 0 0 0-62 0H32v-32h144v12.31A32.1 32.1 0 0 0 161 184m31 24a16 16 0 1 1 16-16a16 16 0 0 1-16 16m48-24h-17a32.06 32.06 0 0 0-31-24v-32h48Z"/></g></svg> Free Shipping</span>
+    </div>
+  </div>
+
+  <!-- Trust strip -->
+  <div class="strider-lp__stats">
+    <div class="strider-lp__wrap strider-lp__stats-in">
+      <div class="strider-lp__stat"><b>2007</b><span>Pioneered the balance bike</span></div>
+      <div class="strider-lp__stat"><b>4M+</b><span>Bikes sold worldwide</span></div>
+      <div class="strider-lp__stat"><b>10M+</b><span>Kids taught to ride</span></div>
+      <div class="strider-lp__stat"><b>75+</b><span>Countries</span></div>
+    </div>
+  </div>
+
+  <!-- Featured products -->
+  <section class="strider-lp__section">
+    <div class="strider-lp__wrap">
+      <div class="strider-lp__kicker">The answer</div>
+      <h2 class="strider-lp__h2">For your 1-year-old, start here.</h2>
+      <p class="strider-lp__lead">Start with the 2-in-1 Rocking Bike &mdash; it rocks now and rolls the moment they walk. The 12 Sport is the natural next step.</p>
+      <div class="strider-lp__picks">
+        <div class="strider-lp__card strider-lp__card--hero">
+          <span class="strider-lp__tag">Best for babies &amp; 1-year-olds</span>
+          <div class="strider-lp__card-top">
+            <img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/500x659/products/153/778/12-Sport-RB-Blue-Primary-Web-Image__84644.1776777716.jpg?c=1" alt="Strider 2-in-1 Rocking Bike" loading="lazy">
+            <div>
+              <h3>Strider&reg; 2-in-1 Rocking Bike</h3>
+              <div class="strider-lp__price">$299.98 <small>Free shipping</small></div>
+              <p style="font-size:.95rem;color:var(--muted)">Rocks like a cradle, then rolls when they&rsquo;re ready.</p>
+            </div>
+          </div>
+          <ul class="strider-lp__spec">
+            <li>Starts as young as 6 months (6 mo &ndash; 4 yr)</li>
+            <li>Secure rocking base builds confidence first</li>
+            <li>Detaches into a 6.7 lb balance bike when they walk</li>
+            <li>Flat-free foam tires &mdash; never need air</li>
+          </ul>
+          <a class="btn btn--block strider-lp-shop" data-product="Rocking Bike" data-cta="card" href="https://striderbikes.com/rocking-bikes/12-sport/">Shop the Rocking Bike</a>
+          <div class="strider-lp__cardrate"><span class="strider-lp__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5 / 5 from 47 verified parents</div>
+        </div>
+        <div class="strider-lp__card">
+          <span class="strider-lp__tag strider-lp__tag--alt">The next step</span>
+          <div class="strider-lp__card-top">
+            <img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/500x659/products/155/777/12-Sport-Blue-Primary-Web-Image__78774.1776777698.jpg?c=1" alt="Strider 12 Sport Balance Bike" loading="lazy">
+            <div>
+              <h3>Strider&reg; 12 Sport</h3>
+              <div class="strider-lp__price">$169.99 <small>Free shipping</small></div>
+              <p style="font-size:.95rem;color:var(--muted)">When they&rsquo;re walking, the bike they grow into.</p>
+            </div>
+          </div>
+          <ul class="strider-lp__spec">
+            <li>Ideal for most riders ages 18 months &ndash; 4 years</li>
+            <li>Lightweight 6.7 lbs &mdash; easy to handle</li>
+            <li>Tool-free seat &amp; bar adjust as they grow</li>
+          </ul>
+          <a class="btn btn--block btn--ghost-dark strider-lp-shop" data-product="12 Sport" data-cta="card" href="https://striderbikes.com/balance-bikes/12-sport/">Shop the 12 Sport</a>
+          <div class="strider-lp__cardrate"><span class="strider-lp__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8 / 5 from verified Strider parents</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="strider-lp__section strider-lp__section--soft">
+    <div class="strider-lp__wrap">
+      <div class="strider-lp__kicker">See it in 90 seconds</div>
+      <h2 class="strider-lp__h2">Watch a baby learn to ride.</h2>
+      <p class="strider-lp__lead">It starts before they can walk &mdash; on the rocking base. The way Strider has taught 10 million kids to ride.</p>
+      <div class="strider-lp__video">
+        <div class="strider-lp__videoframe" id="strider-video" data-embed="https://www.youtube-nocookie.com/embed/sSsdZ0FQzkQ?autoplay=1" style="background-image:url('https://i.ytimg.com/vi/sSsdZ0FQzkQ/maxresdefault.jpg')" role="button" aria-label="Play video">
+          <div class="strider-lp__play"><svg width="30" height="30" viewBox="0 0 24 24" fill="#111"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="strider-lp__section">
+    <div class="strider-lp__wrap">
+      <div class="strider-lp__kicker">Why two is the perfect age</div>
+      <h2 class="strider-lp__h2">Balance first. Everything else follows.</h2>
+      <div class="strider-lp__benefits">
+        <div class="strider-lp__benefit">
+          <div class="strider-lp__ico"><svg class="ph ph-duo" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="m56 88l32 80c0 17.67-20 24-32 24s-32-6.33-32-24Zm144-32l-32 80c0 17.67 20 24 32 24s32-6.33 32-24Z" opacity=".2"/><path d="m239.43 133l-32-80a8 8 0 0 0-9.16-4.84L136 62V40a8 8 0 0 0-16 0v25.58L54.26 80.19A8 8 0 0 0 48.57 85v.06l-32 79.94a7.9 7.9 0 0 0-.57 3c0 23.31 24.54 32 40 32s40-8.69 40-32a7.9 7.9 0 0 0-.57-3L66.92 93.77L120 82v126h-16a8 8 0 0 0 0 16h48a8 8 0 0 0 0-16h-16V78.42l51-11.32l-26.43 65.9a7.9 7.9 0 0 0-.57 3c0 23.31 24.54 32 40 32s40-8.69 40-32a7.9 7.9 0 0 0-.57-3M56 184c-7.53 0-22.76-3.61-23.93-14.64L56 109.54l23.93 59.82C78.76 180.39 63.53 184 56 184m144-32c-7.53 0-22.76-3.61-23.93-14.64L200 77.54l23.93 59.82C222.76 148.39 207.53 152 200 152"/></g></svg></div>
+          <h3>Balance is the real skill</h3>
+          <p>Training wheels teach pedaling, not balancing &mdash; so kids start over later. A child who learns balance from the start skips that step entirely.</p>
+        </div>
+        <div class="strider-lp__benefit">
+          <div class="strider-lp__ico"><svg class="ph ph-duo" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M224 128a96 96 0 1 1-96-96a96 96 0 0 1 96 96" opacity=".2"/><path d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88M80 108a12 12 0 1 1 12 12a12 12 0 0 1-12-12m96 0a12 12 0 1 1-12-12a12 12 0 0 1 12 12m-1.08 48c-10.29 17.79-27.39 28-46.92 28s-36.63-10.2-46.92-28a8 8 0 1 1 13.84-8c7.47 12.91 19.21 20 33.08 20s25.61-7.1 33.08-20a8 8 0 1 1 13.84 8"/></g></svg></div>
+          <h3>Confidence that clicks</h3>
+          <p>That first glide with both feet up is a moment they feel. Strider&reg; is built so toddlers get there sooner &mdash; and grin the whole way.</p>
+        </div>
+        <div class="strider-lp__benefit">
+          <div class="strider-lp__ico"><svg class="ph ph-duo" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M138.54 149.46C106.62 96.25 149.18 43.05 239.63 48.37c5.37 90.45-47.88 133.02-101.09 101.09M16.26 88.26c-3.8 64.61 34.21 95 72.21 72.21c22.8-38-7.6-76.01-72.21-72.21" opacity=".2"/><path d="M247.63 47.89a8 8 0 0 0-7.52-7.52c-51.76-3-93.32 12.74-111.18 42.22c-11.8 19.48-11.78 43.16-.16 65.74a71.4 71.4 0 0 0-14.17 26.95L98.33 159c7.82-16.33 7.52-33.36-1-47.49C84.09 89.73 53.62 78 15.79 80.27a8 8 0 0 0-7.52 7.52c-2.23 37.83 9.46 68.3 31.25 81.5A45.8 45.8 0 0 0 63.44 176A54.6 54.6 0 0 0 87 170.33l25 25V224a8 8 0 0 0 16 0v-29.49a55.6 55.6 0 0 1 12.27-35a73.9 73.9 0 0 0 33.31 8.4a60.9 60.9 0 0 0 31.83-8.86c29.48-17.84 45.26-59.4 42.22-111.16M86.06 146.74l-24.41-24.4a8 8 0 0 0-11.31 11.31l24.41 24.41c-9.61 3.18-18.93 2.39-26.94-2.46C32.47 146.31 23.79 124.32 24 96c28.31-.25 50.31 8.47 59.6 23.81c4.85 8.01 5.64 17.33 2.46 26.93m111.06-1.36c-13.4 8.11-29.15 8.73-45.15 2l53.69-53.7a8 8 0 0 0-11.31-11.32L140.65 136c-6.76-16-6.15-31.76 2-45.15c13.94-23 47-35.8 89.33-34.83c.96 42.32-11.84 75.42-34.86 89.36"/></g></svg></div>
+          <h3>A bike that grows with them</h3>
+          <p>Tool-free adjustments mean the bike you buy now still fits years from now. One bike, years of riding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section class="strider-lp__section strider-lp__section--soft">
+    <div class="strider-lp__wrap">
+      <div class="strider-lp__kicker">From rocking to striding to riding</div>
+      <h2 class="strider-lp__h2">Find the exact right fit by stage.</h2>
+      <p class="strider-lp__lead">Every child starts in a different place. Here&rsquo;s where a 1-year-old usually lands &mdash; and what comes next.</p>
+      <div class="strider-lp__journey">
+        <div class="strider-lp__stage strider-lp__stage--mid">
+          <img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/500x659/products/153/778/12-Sport-RB-Blue-Primary-Web-Image__84644.1776777716.jpg?c=1" alt="Strider 2-in-1 Rocking Bike" loading="lazy">
+          <div class="age">6 mo &ndash; 18 mo &larr; your 1-yr-old</div>
+          <h3>Strider&reg; 2-in-1 Rocking Bike</h3>
+          <p>A secure rocking base to start the very youngest riders.</p>
+          <a class="strider-lp-shop" data-product="Rocking Bike" data-cta="journey" href="https://striderbikes.com/rocking-bikes/12-sport/">See the Rocking Bike &rarr;</a>
+        </div>
+        <div class="strider-lp__stage">
+          <img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/500x659/products/155/777/12-Sport-Blue-Primary-Web-Image__78774.1776777698.jpg?c=1" alt="Strider 12 Sport Balance Bike" loading="lazy">
+          <div class="age">Walking &middot; 18 mo &ndash; 4 yr</div>
+          <h3>Strider&reg; 12 Sport / 12 Pro</h3>
+          <p>The balance-bike sweet spot. Where most toddlers begin.</p>
+          <a class="strider-lp-shop" data-product="12 Sport" data-cta="journey" href="https://striderbikes.com/balance-bikes/12-sport/">Shop the 12 Sport &rarr;</a>
+        </div>
+        <div class="strider-lp__stage">
+          <img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/500x659/products/176/745/24_source_1726674704__11303.1775841975.jpg?c=1" alt="Strider 14x Convertible Bike" loading="lazy">
+          <div class="age">Ready for pedals &middot; 3 &ndash; 6 yr</div>
+          <h3>Strider&reg; 14x Convertible</h3>
+          <p>When they&rsquo;re ready, an optional pedal kit adds pedals to the same bike &mdash; no new bike needed.</p>
+          <a class="strider-lp-pedal" data-cta="journey" href="https://striderbikes.com/balance-to-pedal">Explore balance-to-pedal &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="strider-lp__section" id="strider-reviews">
+    <div class="strider-lp__wrap">
+      <div class="strider-lp__kicker">Real Strider parents</div>
+      <h2 class="strider-lp__h2">&ldquo;Wish I&rsquo;d bought it sooner.&rdquo;</h2>
+      <div class="strider-lp__ratebar"><b>5.0</b> <span class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</span> &middot; 47 verified Rocking Bike buyers</div>
+      <div class="strider-lp__reviews">
+        <div class="strider-lp__review">
+          <span class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;Wish I would&rsquo;ve bought it sooner! My 9-month-old absolutely loves this bike already!&rdquo;</p>
+          <div class="who">Samantha <span>&middot; Verified buyer</span></div>
+        </div>
+        <div class="strider-lp__review">
+          <span class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;Learning to ride made easy! The bike paired with the rocking base has been a favorite since day one. Some days he rocks, other days we take it off the stand and ride the backyard.&rdquo;</p>
+          <div class="who">Tracy <span>&middot; Verified buyer</span></div>
+        </div>
+        <div class="strider-lp__review">
+          <span class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;Such a creative approach! The perfect solution for my little grandson who isn&rsquo;t quite ready for the real ride.&rdquo;</p>
+          <div class="who">BeLinda <span>&middot; Verified buyer</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section class="strider-lp__section strider-lp__section--soft">
+    <div class="strider-lp__wrap">
+      <div class="strider-lp__proof">
+        <h2>10 million kids. One first bike.</h2>
+        <p>Since 2007, families in more than 75 countries have started their kids on a Strider&reg;. It&rsquo;s the balance bike that helped make training wheels optional &mdash; and parents keep handing it down.</p>
+        <p class="src">The Wall Street Journal reported balance bikes are making training wheels obsolete.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="strider-lp__section">
+    <div class="strider-lp__wrap strider-lp__faq">
+      <div class="strider-lp__kicker">Parent questions</div>
+      <h2 class="strider-lp__h2" style="margin-bottom:26px">One-year-old, two wheels?</h2>
+      <details open>
+        <summary>Is my 1-year-old too young?</summary>
+        <p>Not at all. The 2-in-1 Rocking Bike is designed for riders as young as 6 months. The rocking base lets babies build confidence and balance safely &mdash; long before they can walk.</p>
+      </details>
+      <details>
+        <summary>Why a balance bike instead of a tricycle or training wheels?</summary>
+        <p>Tricycles and training wheels teach pedaling but let kids lean on stability that isn&rsquo;t really there. A balance bike teaches the actual skill &mdash; balance &mdash; first. Most kids then move straight to a pedal bike with no training wheels at all.</p>
+      </details>
+      <details>
+        <summary>Rocking Bike or 12 Sport &mdash; which one?</summary>
+        <p>For a 1-year-old, start with the 2-in-1 Rocking Bike ($299.98) &mdash; it rocks now and detaches into a balance bike when they walk. If your child is already walking confidently, the 12 Sport ($169.99) is a great place to begin.</p>
+      </details>
+      <details>
+        <summary>What if it&rsquo;s not the right fit?</summary>
+        <p>Every Genuine Strider is backed by a <b>30-Day Satisfaction Guarantee</b>.</p>
+      </details>
+      <details>
+        <summary>How long will they actually ride it?</summary>
+        <p>Years. Tool-free seat and handlebar adjustments mean the bike grows from toddler to preschooler. When they&rsquo;re ready for pedals, the convertible 14x lets you add a pedal kit to the same style of bike &mdash; no need to start over.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="strider-lp__final">
+    <div class="strider-lp__wrap">
+      <h2>Balance before they can even walk.</h2>
+      <p>Give your 1-year-old the bike that 10 million kids learned to ride on.</p>
+      <a class="btn strider-lp-shop" data-product="Rocking Bike" data-cta="final" href="https://striderbikes.com/rocking-bikes/12-sport/">Shop the 2-in-1 Rocking Bike &mdash; $299.98</a>
+      <p class="fine">30-Day Money-Back Guarantee &middot; 2-Year Warranty &middot; Free shipping</p>
+    </div>
+  </section>
+
+  <footer class="strider-lp__foot">
+    <div class="strider-lp__wrap strider-lp__foot-in">
+      <a href="https://striderbikes.com/"><img class="strider-lp__logo" src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/strider-logo_1769528772__73164.original.png" alt="Strider Bikes" style="height:24px"></a>
+      <nav class="strider-lp__foot-links">
+        <a class="strider-lp-shop" data-product="Rocking Bike" data-cta="footer" href="https://striderbikes.com/rocking-bikes/12-sport/">Shop Rocking Bike</a>
+        <a href="https://striderbikes.com/balance-bikes/12-sport/">Shop 12 Sport</a>
+        <a class="strider-lp-quiz" data-cta="footer" href="https://striderbikes.com/bikequiz">Bike Quiz</a>
+      </nav>
+      <div class="strider-lp__tm">Strider&reg; is a registered trademark of Strider Sports International, Inc. Age ranges are guides, not rules &mdash; every child develops at their own pace. 30-Day Satisfaction Guarantee &amp; 2-Year Limited Warranty apply to Genuine &amp; Authorized Strider products. &copy; 2026 Strider Sports International, Inc.</div>
+    </div>
+  </footer>
+</div>
+
+<div class="strider-lp-stickycta" id="strider-lp-stickycta">
+  <a class="strider-lp-shop" data-product="Rocking Bike" data-cta="sticky" href="https://striderbikes.com/rocking-bikes/12-sport/">Shop the Rocking Bike &middot; $299.98</a>
+</div>
+
+<!-- PostHog (fill the project key + create flag "strider-age-band-1yo" to activate) -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_B9C6UbZJaK8e2Y8fJmXKqVmogbdiNogHcyJyUCGfdPB9', { api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only' });
+</script>
+
+<script>
+(function () {
+  var AGE_BAND = '1-year-old', LP = 'age_band';
+
+  // Reparent the fixed sticky CTA so a themed host's transform ancestors don't pin it mid-page.
+  function reparent() { var el = document.getElementById('strider-lp-stickycta'); if (el && el.parentNode !== document.body) document.body.appendChild(el); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reparent); else reparent();
+
+  // Click-to-play video facade (keeps LCP fast - no iframe until clicked)
+  var vf = document.getElementById('strider-video');
+  if (vf) vf.addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+    f.setAttribute('allowfullscreen', '');
+    f.src = vf.getAttribute('data-embed');
+    vf.innerHTML = ''; vf.appendChild(f);
+    track('lp_video_play', { lp: LP, age_band: AGE_BAND });
+  });
+
+  // Unified tracking -> GA4 (gtag/dataLayer) AND PostHog, all no-op safe
+  function track(event, params) {
+    params = params || {};
+    try { if (typeof window.gtag === 'function') window.gtag('event', event, params); else if (Array.isArray(window.dataLayer)) window.dataLayer.push(Object.assign({ event: event }, params)); } catch (e) {}
+    try { if (window.posthog && window.posthog.capture) window.posthog.capture(event, params); } catch (e) {}
+  }
+
+  // PostHog A/B - first experiment: hero CTA copy. Activates once the flag exists.
+  var __appliedAB = false;
+  function __applyVariant() {
+    if (__appliedAB) return; __appliedAB = true;
+    var v = null;
+    try { v = window.posthog && window.posthog.getFeatureFlag && window.posthog.getFeatureFlag('strider-age-band-1yo'); } catch (e) {}
+    if (v === 'variant_b') {
+      try {
+        document.body.classList.add('strider-var-b');
+        var h1 = document.querySelector('.strider-lp__hero-copy h1');
+        if (h1) h1.innerHTML = 'The first bike for your 1-year-old that they won\u2019t outgrow.';
+        var sub = document.querySelector('.strider-lp__hero-copy .strider-lp__sub');
+        if (sub) sub.innerHTML = 'The <b>Strider\u00ae 2-in-1 Rocking Bike</b> rocks for your 6-month-old, rolls the moment they walk, and keeps going to age 4 \u2014 one bike for their whole start, instead of three you replace each year.';
+        var cta = document.getElementById('strider-hero-cta');
+        if (cta) cta.textContent = 'Shop the Rocking Bike \u2192';
+        var reassure = document.querySelector('.strider-lp__reassure');
+        if (reassure) reassure.innerHTML = '<b>$299.98</b> \u00b7 rocks from 6 months, rolls to age 4 \u00b7 30-day money-back \u00b7 free shipping';
+      } catch (e) {}
+    }
+    track('experiment_assigned', { flag: 'strider-age-band-1yo', variant: v || 'control' });
+  }
+  try {
+    if (window.posthog) {
+      window.posthog.onFeatureFlags && window.posthog.onFeatureFlags(function () { __applyVariant(); });
+      window.posthog.reloadFeatureFlags && window.posthog.reloadFeatureFlags();
+    }
+  } catch (e) {}
+  setTimeout(__applyVariant, 2500);
+
+  // Funnel events
+  track('lp_pageview', { lp: LP, age_band: AGE_BAND });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a'); if (!a) return;
+    if (a.classList.contains('strider-lp-shop')) {
+      track('lp_cta_clicked', { lp: LP, age_band: AGE_BAND, product: a.getAttribute('data-product') || '', placement: a.getAttribute('data-cta') || '' });
+      track('select_item', { item_list_name: 'age_band_' + AGE_BAND, items: [{ item_name: a.getAttribute('data-product') || '' }] });
+    } else if (a.classList.contains('strider-lp-quiz')) { track('lp_quiz_clicked', { lp: LP, age_band: AGE_BAND }); }
+    else if (a.classList.contains('strider-lp-pedal')) { track('lp_pedal_clicked', { lp: LP, age_band: AGE_BAND }); }
+  }, false);
+
+  // Reviews-viewed (one-shot)
+  var rv = document.getElementById('strider-reviews');
+  if (rv && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (ents) { ents.forEach(function (en) { if (en.isIntersecting) { track('lp_reviews_viewed', { lp: LP, age_band: AGE_BAND }); io.disconnect(); } }); }, { threshold: 0.4 });
+    io.observe(rv);
+  }
+})();
+</script>
+<script>
+/* ux-enhance-v1 : subtle on-scroll reveal. Gated by reduced-motion + IO; no-JS = fully visible. */
+(function(){
+  try{
+    if(!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var sel='.strider-lp__h2,.strider-lp__lead,.strider-lp__card,.strider-lp__benefit,.strider-lp__stage,.strider-lp__review,.strider-lp__proof,.lst-tablewrap,.lst-item,.rsn-item,.gift-gcard,.gift-quote,.lst-method,.rsn-help';
+    var els=[].slice.call(document.querySelectorAll(sel));
+    if(!els.length)return;
+    document.documentElement.classList.add('sr-on');
+    els.forEach(function(el){el.classList.add('sr');});
+    var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('sr-in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -6% 0px',threshold:0.04});
+    els.forEach(function(el){io.observe(el);});
+    setTimeout(function(){els.forEach(function(el){el.classList.add('sr-in');});},1500);
+  }catch(e){}
+})();
+</script>
