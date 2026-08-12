@@ -1,0 +1,346 @@
+<meta charset="utf-8">
+<!-- REV 2026-06-17 (r2, Strider CS/Web feedback): shipping-speed verbiage removed; video end-screen suggestions restored; guarantee/age/14x copy edits. See CHANGELOG-2026-06-17.md -->
+<script>/* viewport guard (v1): ensure mobile width even if the host/preview lacks a viewport meta; idempotent, injects into <head> */
+(function(){try{if(!document.querySelector('meta[name="viewport"]')){var m=document.createElement("meta");m.name="viewport";m.setAttribute("content","width=device-width, initial-scale=1, viewport-fit=cover");(document.head||document.documentElement).appendChild(m);}}catch(e){}})();</script>
+<!--
+STRIDER "5 REASONS" CONCERN LP &middot; "5 Reasons Parents Skip Training Wheels"
+  VERSION 2026-06-08 &middot; build v1-reasons. +icons Chamber Media (internal). Customer-facing = Strider&reg;.
+  Concern-answering advertorial, keyword-targeted (balance bike vs training wheels, what age, are they
+  safe/worth it, do they work, vs tricycle). Doubles as the LP for Conquest (training-wheels/tricycle)
+  campaigns. Encoding-proof. PostHog flag strider-reasons-lp (project Strider Bikes 458796).
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+  .strider-lp * { box-sizing: border-box; margin: 0; padding: 0; }
+  .strider-lp {
+    --yellow: #FFCD03; --blue: #004CFF; --ink: #111111; --muted: #555a61;
+    --line: #e7e9ee; --bg-soft: #f7f8fa;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background: #fff; overflow-x: hidden;
+  }
+  .strider-lp h1, .strider-lp h2, .strider-lp h3 {
+    font-family: 'Libre Franklin', Arial, Helvetica, sans-serif;
+    line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); font-weight: 900;
+  }
+  .strider-lp p { font-size: 1.05rem; }
+  .strider-lp a { color: inherit; text-decoration: none; }
+  .strider-lp__wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+  .strider-lp .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: #FFCD03; color: #000; font-family: 'Libre Franklin', Arial, sans-serif;
+    font-weight: 800; font-size: 1.05rem; letter-spacing: 0.01em; padding: 16px 26px;
+    border-radius: 12px; border: 0; cursor: pointer; min-height: 52px;
+    transition: transform .12s ease, box-shadow .12s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+  }
+  .strider-lp .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,0.20); }
+  .strider-lp .btn--ghost { background: rgba(255,255,255,0.12); color: #fff; border: 2px solid rgba(255,255,255,0.7); box-shadow: none; }
+  .strider-lp .btn--ghost-dark { background: #fff; color: #111; border: 2px solid #111; box-shadow: none; }
+  .strider-lp .btn--block { width: 100%; }
+
+  .strider-lp__promo { background: #111; color: #fff; text-align: center; font-size: .92rem; font-weight: 600; padding: 9px 16px; }
+  .strider-lp__promo strong { color: #FFCD03; }
+
+  .strider-lp__head { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .strider-lp__head-in { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .strider-lp__logo { height: 26px; width: auto; display: block; }
+  .strider-lp__head .btn { padding: 11px 18px; min-height: 0; font-size: .95rem; }
+
+  /* ---------- Lifestyle hero ---------- */
+  .strider-lp__hero { position: relative; min-height: 580px; display: flex; align-items: center;
+    background: #111 url('https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/1280w/carousel/11/12_comp_-_251126_-_lifestyle_shoot-4507__74985.jpg?c=1') center 30%/cover no-repeat;
+    padding: 64px 0; }
+  .strider-lp__hero::before { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(8,10,16,0.86) 0%, rgba(8,10,16,0.55) 46%, rgba(8,10,16,0.08) 100%), linear-gradient(0deg, rgba(8,10,16,0.55), transparent 55%); }
+  .strider-lp__hero-in { position: relative; z-index: 1; }
+  .strider-lp__hero-copy { max-width: 600px; color: #fff; }
+  .strider-lp__hero-copy h1, .strider-lp__hero-copy p, .strider-lp__hero-copy li { color: #fff; }
+  .strider-lp__eyebrow { display: inline-block; font-family: 'Libre Franklin', sans-serif; font-weight: 800; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: #111; background: #FFCD03; padding: 6px 12px; border-radius: 6px; margin-bottom: 16px; }
+  .strider-lp__hero h1 { font-size: clamp(2.1rem, 5vw, 3.5rem); text-shadow: 0 2px 18px rgba(0,0,0,0.5); }
+  .strider-lp__hero h1 .u { color: #FFCD03; }
+  .strider-lp__sub { font-size: 1.18rem; margin: 16px 0 20px; max-width: 32em; text-shadow: 0 1px 10px rgba(0,0,0,0.55); }
+  .strider-lp__sub b { font-weight: 700; }
+  .strider-lp__bullets { list-style: none; margin: 0 0 24px; display: grid; gap: 9px; }
+  .strider-lp__bullets li { position: relative; padding-left: 30px; font-size: 1.05rem; font-weight: 600; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
+  .strider-lp__bullets li svg { position: absolute; left: 0; top: 3px; }
+  .strider-lp__cta-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .strider-lp__reassure { font-size: .92rem; color: #e9ecf2; margin-top: 14px; }
+  .strider-lp__reassure b { color: #fff; }
+  .strider-lp__trustchip { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); color: #fff; border-radius: 999px; padding: 8px 15px; font-size: .9rem; font-weight: 700; backdrop-filter: blur(6px); }
+  .strider-lp__stars { color: #FFCD03; letter-spacing: 1px; }
+
+  /* ---------- Risk-reversal strip ---------- */
+  .strider-lp__guarantee { background: #fffbe6; border-bottom: 1px solid #f1e6a8; }
+  .strider-lp__guarantee-in { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 30px; padding: 15px 16px; text-align: center; }
+  .strider-lp__greward { display: inline-flex; align-items: center; gap: 9px; font-weight: 700; font-size: .96rem; color: #1a1a1a; }
+  .strider-lp__greward svg { flex: 0 0 auto; }
+
+  /* ---------- Trust strip ---------- */
+  .strider-lp__stats { background: #111; color: #fff; }
+  .strider-lp__stats-in { display: grid; grid-template-columns: repeat(4,1fr); text-align: center; }
+  .strider-lp__stat { padding: 22px 12px; border-right: 1px solid rgba(255,255,255,0.12); }
+  .strider-lp__stat:last-child { border-right: 0; }
+  .strider-lp__stat b { font-family: 'Libre Franklin', sans-serif; font-size: 1.6rem; color: #FFCD03; display: block; line-height: 1.1; }
+  .strider-lp__stat span { font-size: .86rem; color: #cfd2d8; }
+
+  .strider-lp__section { padding: 56px 0; }
+  .strider-lp__section--soft { background: var(--bg-soft); }
+  .strider-lp__kicker { color: #004CFF; font-weight: 800; font-family: 'Libre Franklin',sans-serif; letter-spacing: .12em; text-transform: uppercase; font-size: .8rem; text-align: center; }
+  .strider-lp__h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); text-align: center; margin: 10px 0 8px; }
+  .strider-lp__lead { text-align: center; color: var(--muted); max-width: 40em; margin: 0 auto 34px; font-size: 1.08rem; }
+
+  /* ---------- Product cards ---------- */
+  .strider-lp__picks { display: grid; grid-template-columns: 1.25fr 1fr; gap: 22px; }
+  .strider-lp__card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 24px; box-shadow: 0 6px 26px rgba(15,23,42,0.07); display: flex; flex-direction: column; }
+  .strider-lp__card--hero { border: 2px solid #FFCD03; box-shadow: 0 14px 40px rgba(255,205,3,0.20); }
+  .strider-lp__card-top { display: flex; gap: 18px; align-items: center; }
+  .strider-lp__card img { width: 130px; height: auto; flex: 0 0 auto; }
+  .strider-lp__tag { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: #FFCD03; color: #111; padding: 4px 9px; border-radius: 5px; margin-bottom: 8px; }
+  .strider-lp__tag--alt { background: #eef2ff; color: #004CFF; }
+  .strider-lp__card h3 { font-size: 1.32rem; }
+  .strider-lp__price { font-family: 'Libre Franklin',sans-serif; font-weight: 800; font-size: 1.5rem; margin: 6px 0 2px; }
+  .strider-lp__price small { font-size: .82rem; color: var(--muted); font-weight: 600; }
+  .strider-lp__spec { list-style: none; margin: 14px 0 18px; display: grid; gap: 7px; }
+  .strider-lp__spec li { position: relative; padding-left: 24px; font-size: .98rem; color: #2a2d33; }
+  .strider-lp__spec li::before { content: "\2713"; position: absolute; left: 0; color: #004CFF; font-weight: 800; }
+  .strider-lp__card .btn { margin-top: auto; }
+  .strider-lp__cardrate { font-size: .86rem; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  /* ---------- Video ---------- */
+  .strider-lp__video { max-width: 860px; margin: 0 auto; }
+  .strider-lp__videoframe { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; cursor: pointer; box-shadow: 0 18px 50px rgba(0,0,0,0.22); background: #000 center/cover no-repeat; }
+  .strider-lp__videoframe::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.18); transition: background .2s; }
+  .strider-lp__videoframe:hover::after { background: rgba(0,0,0,0.05); }
+  .strider-lp__play { position: absolute; z-index: 2; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 84px; height: 84px; border-radius: 50%; background: #FFCD03; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .strider-lp__play svg { margin-left: 5px; }
+  .strider-lp__videoframe iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ---------- Benefits ---------- */
+  .strider-lp__benefits { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .strider-lp__benefit { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 26px 22px; box-shadow: 0 6px 22px rgba(15,23,42,0.06); }
+  .strider-lp__ico { width: 46px; height: 46px; border-radius: 12px; background: linear-gradient(135deg,#FFCD03,#ffe169); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+  .strider-lp__benefit h3 { font-size: 1.18rem; margin-bottom: 7px; }
+  .strider-lp__benefit p { font-size: .99rem; color: var(--muted); }
+
+  /* ---------- Journey ---------- */
+  .strider-lp__journey { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+  .strider-lp__stage { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px; text-align: center; box-shadow: 0 6px 22px rgba(15,23,42,0.06); display:flex; flex-direction:column; }
+  .strider-lp__stage img { width: 100%; max-width: 150px; height: auto; margin: 0 auto 12px; }
+  .strider-lp__stage .age { font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #004CFF; }
+  .strider-lp__stage h3 { font-size: 1.1rem; margin: 4px 0 6px; }
+  .strider-lp__stage p { font-size: .92rem; color: var(--muted); margin-bottom: 14px; }
+  .strider-lp__stage a { margin-top: auto; font-weight: 800; color: #004CFF; border-bottom: 2px solid rgba(0,76,255,.25); display:inline-block; align-self:center; }
+  .strider-lp__stage--mid { border: 2px solid #FFCD03; }
+
+  /* ---------- Reviews ---------- */
+  .strider-lp__reviews { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .strider-lp__review { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px; box-shadow: 0 6px 22px rgba(15,23,42,0.06); display: flex; flex-direction: column; }
+  .strider-lp__review .rs { color: #FFB400; letter-spacing: 2px; font-size: 1.05rem; }
+  .strider-lp__review p { font-size: 1rem; color: #2a2d33; margin: 12px 0 16px; }
+  .strider-lp__review .who { margin-top: auto; font-weight: 700; font-size: .92rem; }
+  .strider-lp__review .who span { color: var(--muted); font-weight: 600; }
+  .strider-lp__ratebar { text-align: center; margin-bottom: 30px; font-weight: 700; }
+  .strider-lp__ratebar b { font-size: 2rem; font-family: 'Libre Franklin',sans-serif; }
+  .strider-lp__ratebar .rs { color: #FFB400; letter-spacing: 2px; font-size: 1.2rem; }
+
+  /* ---------- Proof ---------- */
+  .strider-lp__proof { background: linear-gradient(135deg,#004CFF,#0033b0); color: #fff; border-radius: 22px; padding: 44px 30px; text-align: center; }
+  .strider-lp__proof h2 { color: #fff; font-size: clamp(1.6rem,3.4vw,2.3rem); }
+  .strider-lp__proof p { max-width: 44em; margin: 14px auto 0; color: #dce5ff; font-size: 1.1rem; }
+  .strider-lp__proof .src { font-size: .85rem; color: #aebdf0; margin-top: 8px; }
+
+  /* ---------- FAQ ---------- */
+  .strider-lp__faq { max-width: 760px; margin: 0 auto; }
+  .strider-lp__faq details { border: 1px solid var(--line); border-radius: 12px; padding: 4px 18px; margin-bottom: 12px; background: #fff; }
+  .strider-lp__faq summary { font-family: 'Libre Franklin',sans-serif; font-weight: 700; font-size: 1.06rem; cursor: pointer; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  .strider-lp__faq summary::-webkit-details-marker { display: none; }
+  .strider-lp__faq summary::after { content: "+"; color: #004CFF; font-weight: 800; font-size: 1.4rem; line-height: 1; }
+  .strider-lp__faq details[open] summary::after { content: "\2013"; }
+  .strider-lp__faq p { padding: 0 0 16px; color: var(--muted); font-size: 1rem; }
+
+  /* ---------- Final ---------- */
+  .strider-lp__final { background: #FFCD03; text-align: center; padding: 56px 0; }
+  .strider-lp__final h2 { font-size: clamp(1.8rem,4vw,2.7rem); }
+  .strider-lp__final p { font-size: 1.12rem; margin: 12px auto 24px; max-width: 34em; color: #1a1a1a; }
+  .strider-lp__final .btn { background: #111; color: #fff; }
+  .strider-lp__final .fine { font-size: .9rem; color: #4a4326; margin-top: 16px; }
+
+  /* ---------- Footer ---------- */
+  .strider-lp__foot { background: #111; color: #aeb2ba; padding: 34px 0; font-size: .9rem; }
+  .strider-lp__foot-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; align-items: center; }
+  .strider-lp__foot a { color: #fff; font-weight: 600; }
+  .strider-lp__foot-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .strider-lp__tm { width: 100%; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 16px; font-size: .82rem; color: #8b9098; }
+
+  /* ---------- Sticky mobile CTA (reparented; literal hex) ---------- */
+  .strider-lp-stickycta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9000; display: none; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,0.88); backdrop-filter: blur(14px) saturate(160%); border-top: 1px solid #e7e9ee; box-shadow: 0 -6px 20px rgba(0,0,0,0.10); }
+  .strider-lp-stickycta a { flex: 1; display: flex; align-items: center; justify-content: center; background: #FFCD03; color: #000; font-family: 'Libre Franklin',sans-serif; font-weight: 800; border-radius: 12px; padding: 14px; font-size: 1rem; min-height: 50px; }
+
+  @media (max-width: 900px) {
+    .strider-lp__hero { min-height: 0; padding: 48px 0; background-position: center 25%; }
+    .strider-lp__hero::before { background: linear-gradient(0deg, rgba(8,10,16,0.92) 8%, rgba(8,10,16,0.55) 60%, rgba(8,10,16,0.35) 100%); }
+    .strider-lp__picks, .strider-lp__benefits, .strider-lp__journey, .strider-lp__reviews { grid-template-columns: 1fr; }
+    .strider-lp__stats-in { grid-template-columns: repeat(2,1fr); }
+    .strider-lp__stat:nth-child(2) { border-right: 0; }
+    .strider-lp__stat:nth-child(1), .strider-lp__stat:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .strider-lp-stickycta { display: flex; }
+    .strider-lp__head .btn { display: none; }
+    .strider-lp__foot-in { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 480px) { .strider-lp__card-top { flex-direction: column; text-align: center; } .strider-lp__card img { width: 150px; } }
+
+  /* ---- reasons ---- */
+  .rsn-hero{ position:relative; min-height:540px; display:flex; align-items:center; padding:58px 0;
+    background:#111 url('https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/1280w/carousel/11/12_comp_-_251126_-_lifestyle_shoot-4507__74985.jpg?c=1') center 28%/cover no-repeat; }
+  .rsn-hero::before{ content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,10,16,.88) 0%,rgba(8,10,16,.55) 48%,rgba(8,10,16,.1) 100%),linear-gradient(0deg,rgba(8,10,16,.55),transparent 55%); }
+  .rsn-hero__in{ position:relative; z-index:1; max-width:640px; color:#fff; }
+  .rsn-hero__in h1,.rsn-hero__in p{ color:#fff; }
+  .rsn-hero h1{ font-size:clamp(2.1rem,4.8vw,3.3rem); text-shadow:0 2px 18px rgba(0,0,0,.5); }
+  .rsn-hero h1 .u{ color:#FFCD03; }
+  .rsn-meta{ font-size:.9rem; color:#e9ecf2; font-weight:600; margin:6px 0 14px; } .rsn-meta .rs{ color:#FFCD03; }
+  .rsn-list{ max-width:880px; margin:0 auto; }
+  .rsn-item{ display:grid; grid-template-columns:64px 1fr; gap:20px; padding:26px 0; border-bottom:1px solid var(--line); }
+  .rsn-num{ width:54px; height:54px; border-radius:50%; background:#FFCD03; color:#111; font-family:'Libre Franklin',sans-serif; font-weight:900; font-size:1.5rem; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(0,0,0,.14); }
+  .rsn-item h3{ font-size:1.42rem; margin-bottom:8px; }
+  .rsn-item h3 .a{ color:#004CFF; }
+  .rsn-item p{ font-size:1.06rem; color:#2a2d33; }
+  .rsn-proof{ background:var(--bg-soft); border-left:3px solid #FFCD03; padding:10px 14px; border-radius:0 8px 8px 0; font-size:.96rem; font-weight:600; margin-top:12px; }
+  .rsn-mid{ text-align:center; padding:30px 0; }
+  .rsn-help{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .rsn-help a.card{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; text-align:center; box-shadow:0 6px 22px rgba(15,23,42,.06); font-weight:700; }
+  .rsn-help a.card b{ display:block; font-family:'Libre Franklin',sans-serif; font-size:1.05rem; margin-bottom:2px; } .rsn-help a.card span{ color:#004CFF; font-size:.9rem; }
+  @media(max-width:760px){ .rsn-hero{min-height:0;padding:42px 0;} .rsn-hero::before{background:linear-gradient(0deg,rgba(8,10,16,.92) 8%,rgba(8,10,16,.5) 70%);} .rsn-item{grid-template-columns:1fr; gap:10px;} .rsn-help{grid-template-columns:1fr;} }
+
+  /* ===== UX/UI enhancement pass (ui-ux-pro-max) :: ux-enhance-v1 ===== */
+  .strider-lp a, .strider-lp button, .strider-lp summary, .strider-lp__videoframe { touch-action: manipulation; }
+  .strider-lp .btn { -webkit-tap-highlight-color: transparent; }
+  .strider-lp a:focus-visible, .strider-lp button:focus-visible, .strider-lp summary:focus-visible, .strider-lp .btn:focus-visible, .strider-lp__videoframe:focus-visible { outline: 3px solid #004CFF; outline-offset: 3px; border-radius: 10px; }
+  .strider-lp-stickycta a:focus-visible { outline: 3px solid #111; outline-offset: -4px; }
+  .strider-lp .btn:active { transform: scale(.97); }
+  .strider-lp summary { cursor: pointer; }
+  .strider-lp__price, .strider-lp__pricetag span, .lst-item h3 .pr, table.lst-table .pr, .strider-lp__ratebar b { font-variant-numeric: tabular-nums; }
+  .gift-gcard, .rsn-help a.card { transition: transform .18s ease, box-shadow .18s ease; }
+  .gift-gcard:hover, .rsn-help a.card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(15,23,42,.12); }
+  table.lst-table a:hover { filter: brightness(.95); }
+  @media (max-width: 900px) { .strider-lp { padding-bottom: 78px; } }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+    html.sr-on .sr { opacity: 0; transform: translateY(16px); transition: opacity .55s ease-out, transform .55s ease-out; }
+    html.sr-on .sr.sr-in { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .strider-lp *, .strider-lp-stickycta * { animation: none !important; transition: none !important; } }
+
+  /* ===== Phosphor duotone icon system :: icons-v1 ===== */
+  .strider-lp .ph { display:inline-block; vertical-align:middle; flex:0 0 auto; }
+  .strider-lp .ph-duo { color:#004CFF; }                         /* detail = blue */
+  .strider-lp .ph-duo path[opacity]{ opacity:1; fill:#FFCD03; }  /* fill shape = yellow */
+  .strider-lp .ph-duo-b { color:#004CFF; }                       /* guarantee strip: blue duotone */
+  .strider-lp .ph-duo-b path[opacity]{ opacity:.16; }
+  .strider-lp__ico { background:#e9f0ff; }                        /* benefit/feature tile: soft blue */
+</style>
+<div class="strider-lp">
+  <div class="strider-lp__promo">&#9733;&#9733;&#9733;&#9733;&#9733; 10M+ kids taught to ride since <strong>2007</strong> &middot; No training wheels needed &middot; 30-Day Money-Back Guarantee</div>
+  <header class="strider-lp__head"><div class="strider-lp__wrap strider-lp__head-in"><a href="https://striderbikes.com/"><img class="strider-lp__logo" src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/strider-logo_1769528772__73164.original.png" alt="Strider Bikes"></a><a class="btn strider-lp-quiz" data-cta="header" href="https://striderbikes.com/bikequiz">Take the Bike Quiz</a></div></header>
+  <section class="rsn-hero"><div class="strider-lp__wrap rsn-hero__in">
+    <span class="strider-lp__eyebrow">Balance Bike vs. Training Wheels</span>
+    <h1>5 Reasons Parents Skip Training Wheels <span class="u">and Choose a Balance Bike</span></h1>
+    <div class="rsn-meta">Updated June 2026 &middot; <span class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</span> Trusted by 10M+ families</div>
+    <p class="strider-lp__sub">Thinking about your child&rsquo;s first bike and not sure a balance bike is the right call? We answered the five questions every parent asks &mdash; from &ldquo;is my toddler too young?&rdquo; to &ldquo;is it really worth it?&rdquo;</p>
+    <div class="strider-lp__cta-row" style="margin-top:14px"><a class="btn strider-lp-quiz" id="strider-hero-cta" data-cta="hero" href="https://striderbikes.com/bikequiz">Find their perfect bike &mdash; 30-sec quiz</a><a class="btn btn--ghost strider-lp-shop" data-product="All Bikes" data-cta="hero" href="https://striderbikes.com/toddler-balance-bikes">Shop balance bikes</a></div>
+  </div></section>
+  <div class="strider-lp__guarantee"><div class="strider-lp__wrap strider-lp__guarantee-in"><span class="strider-lp__greward"><svg class="ph ph-duo-b" width="22" height="22" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M216 56v56c0 96-88 120-88 120s-88-24-88-120V56a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8" opacity=".2"/><path d="M208 40H48a16 16 0 0 0-16 16v56c0 52.72 25.52 84.67 46.93 102.19c23.06 18.86 46 25.26 47 25.53a8 8 0 0 0 4.2 0c1-.27 23.91-6.67 47-25.53C198.48 196.67 224 164.72 224 112V56a16 16 0 0 0-16-16m0 72c0 37.07-13.66 67.16-40.6 89.42a129.3 129.3 0 0 1-39.4 22.2a128.3 128.3 0 0 1-38.92-21.81C61.82 179.51 48 149.3 48 112V56h160ZM82.34 141.66a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32l-56 56a8 8 0 0 1-11.32 0Z"/></g></svg> 30-Day Money-Back Guarantee</span><span class="strider-lp__greward"><svg class="ph ph-duo-b" width="22" height="22" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M232 128c0 12.51-17.82 21.95-22.68 33.69c-4.68 11.32 1.42 30.65-7.78 39.85s-28.53 3.1-39.85 7.78C150 214.18 140.5 232 128 232s-22-17.82-33.69-22.68c-11.32-4.68-30.65 1.42-39.85-7.78s-3.1-28.53-7.78-39.85C41.82 150 24 140.5 24 128s17.82-22 22.68-33.69c4.68-11.31-1.42-30.65 7.78-39.85s28.54-3.1 39.85-7.78C106.05 41.82 115.5 24 128 24s22 17.82 33.69 22.68c11.32 4.68 30.65-1.42 39.85 7.78s3.1 28.53 7.78 39.85C214.18 106.05 232 115.5 232 128" opacity=".2"/><path d="M225.86 102.82c-3.77-3.94-7.67-8-9.14-11.57c-1.36-3.27-1.44-8.69-1.52-13.94c-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52c-3.56-1.47-7.63-5.37-11.57-9.14C146.28 23.51 138.44 16 128 16s-18.27 7.51-25.18 14.14c-3.94 3.77-8 7.67-11.57 9.14c-3.25 1.36-8.69 1.44-13.94 1.52c-9.76.15-20.82.31-28.51 8s-7.8 18.75-8 28.51c-.08 5.25-.16 10.67-1.52 13.94c-1.47 3.56-5.37 7.63-9.14 11.57C23.51 109.72 16 117.56 16 128s7.51 18.27 14.14 25.18c3.77 3.94 7.67 8 9.14 11.57c1.36 3.27 1.44 8.69 1.52 13.94c.15 9.76.31 20.82 8 28.51s18.75 7.85 28.51 8c5.25.08 10.67.16 13.94 1.52c3.56 1.47 7.63 5.37 11.57 9.14c6.9 6.63 14.74 14.14 25.18 14.14s18.27-7.51 25.18-14.14c3.94-3.77 8-7.67 11.57-9.14c3.27-1.36 8.69-1.44 13.94-1.52c9.76-.15 20.82-.31 28.51-8s7.85-18.75 8-28.51c.08-5.25.16-10.67 1.52-13.94c1.47-3.56 5.37-7.63 9.14-11.57c6.63-6.9 14.14-14.74 14.14-25.18s-7.51-18.27-14.14-25.18m-11.55 39.29c-4.79 5-9.75 10.17-12.38 16.52c-2.52 6.1-2.63 13.07-2.73 19.82c-.1 7-.21 14.33-3.32 17.43s-10.39 3.22-17.43 3.32c-6.75.1-13.72.21-19.82 2.73c-6.35 2.63-11.52 7.59-16.52 12.38S132 224 128 224s-9.15-4.92-14.11-9.69s-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73c-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82c-2.63-6.35-7.59-11.52-12.38-16.52S32 132 32 128s4.92-9.15 9.69-14.11s9.75-10.17 12.38-16.52c2.52-6.1 2.63-13.07 2.73-19.82c.1-7 .21-14.33 3.32-17.43s10.39-3.22 17.43-3.32c6.75-.1 13.72-.21 19.82-2.73c6.35-2.63 11.52-7.59 16.52-12.38S124 32 128 32s9.15 4.92 14.11 9.69s10.17 9.75 16.52 12.38c6.1 2.52 13.07 2.63 19.82 2.73c7 .1 14.33.21 17.43 3.32s3.22 10.39 3.32 17.43c.1 6.75.21 13.72 2.73 19.82c2.63 6.35 7.59 11.52 12.38 16.52S224 124 224 128s-4.92 9.15-9.69 14.11m-40.65-43.77a8 8 0 0 1 0 11.32l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 0"/></g></svg> 2-Year Limited Warranty</span><span class="strider-lp__greward"><svg class="ph ph-duo-b" width="22" height="22" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M248 120v64a8 8 0 0 1-8 8h-24a24 24 0 0 0-48 0h-64a24 24 0 0 0-48 0H32a8 8 0 0 1-8-8v-40h160v-24Z" opacity=".2"/><path d="m255.42 117l-14-35a15.93 15.93 0 0 0-14.84-10H192v-8a8 8 0 0 0-8-8H32a16 16 0 0 0-16 16v112a16 16 0 0 0 16 16h17a32 32 0 0 0 62 0h50a32 32 0 0 0 62 0h17a16 16 0 0 0 16-16v-64a7.9 7.9 0 0 0-.58-3M192 88h34.58l9.6 24H192ZM32 72h144v64H32Zm48 136a16 16 0 1 1 16-16a16 16 0 0 1-16 16m81-24h-50a32 32 0 0 0-62 0H32v-32h144v12.31A32.1 32.1 0 0 0 161 184m31 24a16 16 0 1 1 16-16a16 16 0 0 1-16 16m48-24h-17a32.06 32.06 0 0 0-31-24v-32h48Z"/></g></svg> Free Shipping</span></div></div>
+  <section class="strider-lp__section"><div class="strider-lp__wrap rsn-list">
+    <p class="strider-lp__lead" style="text-align:left;max-width:none">If you grew up with training wheels, a no-pedal bike can feel backwards at first. But there&rsquo;s a reason pediatric experts, bike shops, and 10 million families have made the switch &mdash; and it comes down to how kids actually learn to ride. Here&rsquo;s the honest answer to the five things parents worry about most.</p>
+    <div class="rsn-item"><div class="rsn-num">1</div><div><h3>Do balance bikes really work? <span class="a">Yes &mdash; and kids skip training wheels for good.</span></h3><p>The hardest part of riding isn&rsquo;t pedaling &mdash; it&rsquo;s balancing. Training Wheels skip that lesson, so kids have to unlearn bad habits later. A balance bike teaches the real skill first: most kids are gliding on two wheels within weeks and move straight to a pedal bike, no training wheels at all.</p><div class="rsn-proof">&#9733;&#9733;&#9733;&#9733;&#9733; Over 10 million kids have learned to ride on a Strider&reg; &mdash; the brand the Wall Street Journal said makes training wheels obsolete.</div></div></div>
+    <div class="rsn-item"><div class="rsn-num">2</div><div><h3>What age can a child start? <span class="a">As early as 6 months.</span></h3><p>You don&rsquo;t have to wait. The 2-in-1 Rocking Bike starts babies at 6 months, and a standard 12-inch balance bike fits most kids from around 18 months. The rule of thumb: if they can walk, they can start learning to balance &mdash; and starting young is the advantage, since there are no pedals to coordinate yet.</p><div class="rsn-proof">Balance bike for a 1-year-old? Absolutely. The earlier they start, the more natural it feels.</div></div></div>
+    <div class="rsn-item"><div class="rsn-num">3</div><div><h3>Are balance bikes safe? <span class="a">Safer than a bike with training wheels.</span></h3><p>A balance bike sits low to the ground, weighs as little as 5 lbs, and keeps both feet within reach of the pavement &mdash; so kids stay in control and can stop themselves anytime. There are no pedals to catch a shin and no false stability like training wheels, which can tip on turns and curbs.</p><div class="rsn-proof">Low &middot; lightweight &middot; feet always down &middot; no pedals to catch &mdash; kids build confidence at their own pace.</div></div></div>
+    <div class="rsn-item"><div class="rsn-num">4</div><div><h3>Are balance bikes worth it? <span class="a">One bike grows with them for years.</span></h3><p>A Strider&reg; isn&rsquo;t a one-season toy. Tool-free adjustments stretch it from toddler to preschooler, and the convertible 14x adds pedals to the same bike when they&rsquo;re ready &mdash; so you&rsquo;re not buying three bikes. That longevity is exactly why Striders get handed down for years.</p><div class="rsn-proof">4M+ bikes sold since 2007 &middot; backed by a 30-Day Guarantee &amp; 2-Year Warranty &mdash; worth every penny, and then some.</div></div></div>
+    <div class="rsn-mid"><a class="btn strider-lp-quiz" data-cta="mid" href="https://striderbikes.com/bikequiz">Not sure which bike? Take the 30-sec quiz &rarr;</a></div>
+    <div class="rsn-item"><div class="rsn-num">5</div><div><h3>Will my child actually ride it? <span class="a">They&rsquo;ll beg to.</span></h3><p>No fear of falling, no frustration, instant freedom &mdash; kids light up the first time they glide with both feet off the ground. It&rsquo;s the rare first bike that doesn&rsquo;t end up forgotten in the garage, and the reason parents say they wish they&rsquo;d bought one sooner.</p><div class="rsn-proof">&ldquo;Wish I&rsquo;d bought it sooner! My 9-month-old loves it already.&rdquo; &mdash; Samantha, verified buyer</div></div></div>
+  </div></section>
+  <section class="strider-lp__section strider-lp__section--soft"><div class="strider-lp__wrap" style="max-width:880px">
+    <div class="strider-lp__kicker">Convinced? Here&rsquo;s your next step</div><h2 class="strider-lp__h2">Find the right Strider by age</h2>
+    <p class="strider-lp__lead">Tell us their age and we&rsquo;ll match them in 30 seconds &mdash; or jump straight to the right page.</p>
+    <div class="rsn-help">
+      <a class="card strider-lp-shop" data-product="Rocking Bike" data-cta="help" href="https://striderbikes.com/rocking-bikes/12-sport/"><b>6 mo &ndash; 2 yr</b><span>2-in-1 Rocking Bike &rarr;</span></a>
+      <a class="card strider-lp-shop" data-product="12 Sport" data-cta="help" href="https://striderbikes.com/balance-bikes/12-sport/"><b>2 &ndash; 4 yr</b><span>12 Sport &rarr;</span></a>
+      <a class="card strider-lp-shop" data-product="14x" data-cta="help" href="https://striderbikes.com/convertible-bikes/14x-classic/"><b>3 &ndash; 6 yr</b><span>14x Convertible &rarr;</span></a>
+    </div>
+  </div></section>
+  <div class="strider-lp__stats"><div class="strider-lp__wrap strider-lp__stats-in"><div class="strider-lp__stat"><b>2007</b><span>Pioneered the balance bike</span></div><div class="strider-lp__stat"><b>4M+</b><span>Bikes sold worldwide</span></div><div class="strider-lp__stat"><b>10M+</b><span>Kids taught to ride</span></div><div class="strider-lp__stat"><b>75+</b><span>Countries</span></div></div></div>
+  <section class="strider-lp__section"><div class="strider-lp__wrap strider-lp__faq">
+    <div class="strider-lp__kicker">More questions</div><h2 class="strider-lp__h2" style="margin-bottom:26px">Balance bikes, answered</h2>
+    <details open><summary>Balance bike vs. tricycle &mdash; which is better?</summary><p>A balance bike. Tricycles keep kids upright for them, so they don&rsquo;t learn to balance &mdash; and the skills don&rsquo;t transfer to a two-wheeler. A balance bike builds the exact skill they need for a pedal bike.</p></details>
+    <details><summary>How long does it take to learn on a balance bike?</summary><p>Many kids are gliding with both feet up within a few weeks of regular play &mdash; some sooner. There&rsquo;s no &ldquo;teaching&rdquo; required; they figure it out through play at their own pace.</p></details>
+    <details><summary>Can they go straight to a pedal bike afterward?</summary><p>Yes &mdash; that&rsquo;s the whole point. Kids who master balance first can skip training wheels entirely. The convertible 14x even adds pedals to the same bike they already know.</p></details>
+    <details><summary>Do you really need a balance bike?</summary><p>You don&rsquo;t <em>need</em> one &mdash; but it&rsquo;s the fastest, lowest-stress way to teach a child to ride, which is why it&rsquo;s become the standard first bike for millions of families.</p></details>
+  </div></section>
+  <section class="strider-lp__final"><div class="strider-lp__wrap">
+    <h2>Ready to skip the training wheels?</h2>
+    <p>Find your child&rsquo;s perfect Strider in 30 seconds &mdash; backed by our 30-Day Money-Back Guarantee.</p>
+    <a class="btn strider-lp-quiz" data-cta="final" href="https://striderbikes.com/bikequiz">Take the 30-second Bike Quiz</a>
+    <p class="fine">Free shipping &middot; 30-Day Money-Back Guarantee &middot; 2-Year Warranty</p>
+  </div></section>
+  <footer class="strider-lp__foot"><div class="strider-lp__wrap strider-lp__foot-in"><a href="https://striderbikes.com/"><img class="strider-lp__logo" src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/strider-logo_1769528772__73164.original.png" alt="Strider Bikes" style="height:24px"></a><nav class="strider-lp__foot-links"><a href="https://striderbikes.com/toddler-balance-bikes">Shop All Bikes</a><a class="strider-lp-quiz" data-cta="footer" href="https://striderbikes.com/bikequiz">Bike Quiz</a></nav><div class="strider-lp__tm">Strider&reg; is a registered trademark of Strider Sports International, Inc. Age ranges are guides, not rules. 30-Day Satisfaction Guarantee &amp; 2-Year Limited Warranty apply to Genuine &amp; Authorized Strider products. &copy; 2026 Strider Sports International, Inc.</div></div></footer>
+</div>
+<div class="strider-lp-stickycta" id="strider-lp-stickycta"><a class="strider-lp-quiz" data-cta="sticky" href="https://striderbikes.com/bikequiz">Take the 30-sec Bike Quiz</a></div>
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_B9C6UbZJaK8e2Y8fJmXKqVmogbdiNogHcyJyUCGfdPB9', { api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only' });
+</script>
+<script>
+(function(){
+  var LP='reasons';
+  function reparent(){var el=document.getElementById('strider-lp-stickycta');if(el&&el.parentNode!==document.body)document.body.appendChild(el);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reparent);else reparent();
+  function track(e,p){p=p||{};try{if(typeof window.gtag==='function')window.gtag('event',e,p);else if(Array.isArray(window.dataLayer))window.dataLayer.push(Object.assign({event:e},p));}catch(x){}try{if(window.posthog&&window.posthog.capture)window.posthog.capture(e,p);}catch(x){}}
+  /* A/B enrollment fix (dedupe + reloadFeatureFlags + 2.5s fallback) \u2014 resurrects the dead test.
+     variant_b = ROUTE TO PRODUCT: swap the quiz-funnel CTAs to age-matched shop pages. */
+  var __appliedAB=false;
+  function __applyVariant(){
+    if(__appliedAB)return; __appliedAB=true;
+    var v=null; try{v=window.posthog&&window.posthog.getFeatureFlag&&window.posthog.getFeatureFlag('strider-reasons-lp');}catch(e){}
+    if(v==='variant_b'){
+      try{
+        document.body.classList.add('strider-var-b');
+        var rw=[
+          {sel:'a[data-cta="header"]',href:'https://striderbikes.com/toddler-balance-bikes',text:'Shop Balance Bikes',product:'All Bikes'},
+          {sel:'#strider-hero-cta',href:'https://striderbikes.com/toddler-balance-bikes',text:'Shop balance bikes \u2192',product:'All Bikes'},
+          {sel:'a[data-cta="mid"]',href:'https://striderbikes.com/toddler-balance-bikes',text:'Ready to start? Shop balance bikes \u2192',product:'All Bikes'},
+          {sel:'a[data-cta="final"]',href:'https://striderbikes.com/toddler-balance-bikes',text:'Shop Balance Bikes',product:'All Bikes'},
+          {sel:'#strider-lp-stickycta a',href:'https://striderbikes.com/toddler-balance-bikes',text:'Shop Balance Bikes',product:'All Bikes'}
+        ];
+        rw.forEach(function(o){var a=document.querySelector(o.sel);if(a){a.setAttribute('href',o.href);a.textContent=o.text;a.classList.remove('strider-lp-quiz');a.classList.add('strider-lp-shop');a.setAttribute('data-product',o.product);}});
+        var sec=document.querySelector('.rsn-hero__in .btn--ghost');if(sec){sec.setAttribute('href','https://striderbikes.com/bike-builder/');sec.textContent='Or build your own \u2192';sec.setAttribute('data-product','Bike Builder');}
+      }catch(e){}
+    }
+    track('experiment_assigned',{flag:'strider-reasons-lp',variant:v||'control'});
+  }
+  try{if(window.posthog){window.posthog.onFeatureFlags&&window.posthog.onFeatureFlags(function(){__applyVariant();});window.posthog.reloadFeatureFlags&&window.posthog.reloadFeatureFlags();}}catch(x){}
+  setTimeout(__applyVariant,2500);
+  track('lp_pageview',{lp:LP});
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;
+    if(a.classList.contains('strider-lp-quiz')){track('lp_quiz_clicked',{lp:LP,placement:a.getAttribute('data-cta')||''});track('lp_cta_clicked',{lp:LP,placement:a.getAttribute('data-cta')||''});}
+    else if(a.classList.contains('strider-lp-shop')){track('lp_cta_clicked',{lp:LP,product:a.getAttribute('data-product')||'',placement:a.getAttribute('data-cta')||''});}
+  },false);
+})();
+</script>
+<script>
+/* ux-enhance-v1 : subtle on-scroll reveal. Gated by reduced-motion + IO; no-JS = fully visible. */
+(function(){
+  try{
+    if(!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var sel='.strider-lp__h2,.strider-lp__lead,.strider-lp__card,.strider-lp__benefit,.strider-lp__stage,.strider-lp__review,.strider-lp__proof,.lst-tablewrap,.lst-item,.rsn-item,.gift-gcard,.gift-quote,.lst-method,.rsn-help';
+    var els=[].slice.call(document.querySelectorAll(sel));
+    if(!els.length)return;
+    document.documentElement.classList.add('sr-on');
+    els.forEach(function(el){el.classList.add('sr');});
+    var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('sr-in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -6% 0px',threshold:0.04});
+    els.forEach(function(el){io.observe(el);});
+    setTimeout(function(){els.forEach(function(el){el.classList.add('sr-in');});},1500);
+  }catch(e){}
+})();
+</script>
