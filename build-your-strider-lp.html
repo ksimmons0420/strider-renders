@@ -1,7 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
+<!--
+  STRIDER BIKES - "Build Your Strider" LP - VERSION 2026-08-14 - build v9 (Strider client feedback pass: Alyssa+Scott copy revisions, de-orange -> yellow-box eyebrows, real Strider logo header+footer, mobile journey arrows now point down, FAQ + product-card rewrites, "classic"->"original")
+  Search this file for "build v8" to confirm you have the latest paste.
+  NOTE: product-card bike images are transparent cutouts hosted at
+    ksimmons0420.github.io/strider-renders/img/ (12-sport.png, 12-pro.png). For the BigCommerce
+    LIVE deploy you may re-host these two PNGs on the BC CDN and swap the two <img src> back.
+  NOTE: Google Tag Manager container GTM-KBFMHHJ is embedded below (head snippet + body noscript).
+    If the live BigCommerce THEME already loads GTM-KBFMHHJ, DELETE the two GTM blocks from this page
+    before deploying, or the container fires twice (doubled pageviews/events). The GitHub Pages preview
+    is standalone (no theme), so the embedded GTM is what makes tags fire there.
+  Deploy target: BigCommerce Web Page (paste fragment). Host: striderbikes.com (store s-0vqb0rkahl).
+  Conversion: ecommerce, closes on-site. Primary CTA routes to the live Bike Builder customizer.
+    - Build hub:  https://striderbikes.com/bike-builder/
+    - 12 Sport:   https://striderbikes.com/bike-builder/12-sport/   (from $104.98)
+    - 12 Pro:     https://striderbikes.com/bike-builder/12-pro/     (from $144.98)
+    - Fit quiz:   https://striderbikes.com/bike-quiz/   (verified: canonical /bike-quiz/)
+  SEO (set in BC Web Page fields):
+    Title: Build Your Strider(R) - Customize the Balance Bike That Grows With Them
+    Meta:  Build a Strider balance bike tuned to your kid - pick size, wheels, grips and color.
+           From rocking to pedaling, one bike for years. Free shipping, 30-day money-back.
+  Compliance: Strider(R) first-use; "30-Day Money-Back Guarantee" verbatim; free-shipping asterisk
+    hedged (contiguous US - VERIFY footnote); no fabricated review count (site shows none); "use age"
+    kept soft; no forced-switch language. Fonts: Libre Franklin (franklin-gothic-atf match for preview).
+-->
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -9,17 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KBFMHHJ');</script>
 <!-- End Google Tag Manager -->
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Build Your Strider - Customize the Balance Bike That Grows With Them</title>
-<meta name="description" content="Build a Strider balance bike tuned to your kid - pick size, wheels, grips and color. From rocking to pedaling, one bike for years. Free shipping, 30-day money-back.">
-<meta name="robots" content="noindex">
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBFMHHJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<!-- Strider "Build Your Strider" LP - preview build v6: GTM + CTA mobile-only + 3D floating-bar buttons -->
+
 <script>/* viewport guard: ensure mobile width even if the host/preview lacks one */
 (function(){try{if(!document.querySelector('meta[name="viewport"]')){var m=document.createElement('meta');m.name='viewport';m.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');(document.head||document.documentElement).appendChild(m);}}catch(e){}})();
 </script>
@@ -47,7 +58,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .strider-lp .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 .strider-lp section{position:relative}
 .strider-lp h1,.strider-lp h2,.strider-lp h3{line-height:1.06;letter-spacing:-.02em;color:var(--ink);font-weight:900}
-.strider-lp .eyebrow{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;color:var(--orange)}
+.strider-lp .eyebrow{display:inline-block;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:var(--black);background:var(--yellow);padding:5px 11px;border-radius:6px}
 .strider-lp .tnum{font-variant-numeric:tabular-nums}
 
 /* Phosphor duotone recolor */
@@ -73,7 +84,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .strider-lp .btn--lg{font-size:19px;padding:18px 32px;min-height:58px}
 .strider-lp .btn--wide{width:100%}
 .strider-lp a:focus-visible,.strider-lp button:focus-visible,.strider-lp summary:focus-visible{
-  outline:3px solid var(--orange);outline-offset:3px;border-radius:8px}
+  outline:3px solid var(--black);outline-offset:3px;border-radius:8px}
 
 /* Promo bar */
 .strider-lp .promo{background:var(--black);color:#fff;text-align:center;font-weight:700;font-size:13.5px;letter-spacing:.01em;padding:9px 16px}
@@ -147,8 +158,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .strider-lp .step h3{font-size:19px}
 .strider-lp .step p{margin-top:8px;font-size:15px}
 .strider-lp .proofline{margin-top:30px;text-align:center;font-weight:700;color:var(--ink);font-size:16px}
-.strider-lp .proofline .ph{color:var(--orange)}
-.strider-lp .proofline .ph path[opacity]{fill:var(--orange);opacity:.2}
+.strider-lp .proofline .ph{color:var(--black)}
+.strider-lp .proofline .ph path[opacity]{fill:var(--yellow);opacity:1}
 .strider-lp .ctacenter{margin-top:30px;text-align:center}
 
 /* Choose base */
@@ -172,7 +183,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .strider-lp .jrny{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:var(--paper)}
 .strider-lp .jphase{padding:30px 26px;position:relative}
 .strider-lp .jphase + .jphase{border-left:1px solid var(--line)}
-.strider-lp .jphase .k{font-weight:900;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.strider-lp .jphase .k{display:inline-block;font-weight:900;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--black);background:var(--yellow);padding:4px 9px;border-radius:5px}
 .strider-lp .jphase h3{font-size:21px;margin-top:8px}
 .strider-lp .jphase p{margin-top:8px;font-size:15px}
 .strider-lp .jphase .arw{position:absolute;right:-13px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--yellow);border:2px solid var(--black);z-index:2;display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--black);font-size:14px}
@@ -254,7 +265,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .strider-lp .bgrid{grid-template-columns:repeat(2,1fr)}
   .strider-lp .steps,.strider-lp .quotes,.strider-lp .jrny{grid-template-columns:1fr}
   .strider-lp .jphase + .jphase{border-left:none;border-top:1px solid var(--line)}
-  .strider-lp .jphase .arw{right:50%;top:auto;bottom:-13px;transform:translateX(50%)}
+  .strider-lp .jphase .arw{right:50%;top:auto;bottom:-13px;transform:translateX(50%) rotate(90deg)}
   .strider-lp .picks{grid-template-columns:1fr}
   .strider-lp .gal{grid-template-columns:repeat(2,1fr)}
   .strider-lp .gal .wide{grid-column:span 2}
@@ -277,6 +288,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
 </style>
 
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBFMHHJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <div class="strider-lp">
 
   <!-- 1. Promo bar -->
@@ -285,7 +301,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- 2. Sticky header -->
   <header class="hdr">
     <div class="wrap">
-      <div class="logo">STRIDER<sup>&reg;</sup></div>
+      <a href="https://striderbikes.com/" aria-label="Strider" class="logo" style="display:inline-flex;align-items:center"><img src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/strider-logo_1769528772__73164.original.png" alt="Strider" style="height:26px;width:auto;display:block"></a>
       <a class="btn" href="https://striderbikes.com/bike-builder/">Build Your Strider</a>
     </div>
   </header>
@@ -295,12 +311,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap">
       <div class="hero__inner">
         <span class="chip"><span class="yd"></span>The original balance bike &bull; Since 2007</span>
-        <h1>Build the one bike your kid <span class="u">won&rsquo;t outgrow.</span></h1>
-        <p class="hero__sub">From rocking to balancing to pedaling &mdash; customize a Strider&reg; that fits your child today, and keeps fitting for years.</p>
+        <h1>Build a bike that <span class="u">fits your kid.</span></h1>
+        <p class="hero__sub">Get a bike that isn&rsquo;t a one-size-fits-all box. Take them from rocking to balancing to riding like a pro with custom frames, wheels, and grips made to meet your rider where they&rsquo;re at.</p>
         <div class="hero__cta">
           <a class="btn btn--lg" href="https://striderbikes.com/bike-builder/">Build Your Strider &rarr;</a>
           <a class="hero__quiz" href="https://striderbikes.com/bike-quiz/">Not sure which fits? Take the 30-second quiz</a>
         </div>
+        <p class="hero__sub" style="font-size:16px;margin-top:14px;max-width:520px">One bike, from rocking to riding &mdash; it fits your rider today and keeps fitting for years.</p>
         <div class="hero__micro">Free shipping<sup>*</sup><span class="dot">&bull;</span>30-Day Money-Back Guarantee<span class="dot">&bull;</span>Builds in under a minute</div>
       </div>
     </div>
@@ -327,8 +344,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- 5. Problem -->
   <section class="prob">
     <div class="wrap sr">
-      <h2>Most &ldquo;first bikes&rdquo; get <span class="hl">outgrown in a season</span> &mdash; or teach training-wheel habits kids have to unlearn.</h2>
-      <p>A Strider flips that. Balance comes first, so the leap to pedaling is faster and far more confident &mdash; and one bike adjusts to keep fitting as your child grows.</p>
+      <h2>Most &ldquo;first bikes&rdquo; get <span class="hl">outgrown in a season</span>, teach bad skills that need to be unlearned, or come too late.</h2>
+      <p>Strider flips that. Balance comes first when they&rsquo;re as young as possible, so they have the skills they need to control their bike, take on all terrains, and stand up on the back like a pro before pedals even enter the picture.</p>
     </div>
   </section>
 
@@ -373,7 +390,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Watch your bike &mdash; and your price &mdash; come together in real time.</p>
       </div>
       <div class="steps">
-        <div class="step sr"><div class="n tnum">1</div><h3>Pick your base</h3><p>Start with the classic 12 Sport or the lighter, adjustable 12 Pro.</p></div>
+        <div class="step sr"><div class="n tnum">1</div><h3>Pick your base</h3><p>Start with the original 12 Sport or the lighter, faster 12 Pro.</p></div>
         <div class="step sr"><div class="n tnum">2</div><h3>Make it theirs</h3><p>Choose frame color, wheels and grips. The bike updates live as you go.</p></div>
         <div class="step sr"><div class="n tnum">3</div><h3>See the price, add to cart</h3><p>Your exact price shows as you build &mdash; then ships free<sup>*</sup> to your door.</p></div>
       </div>
@@ -397,17 +414,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h3>Strider&reg; 12 Sport</h3>
             <div class="pick__price"><span class="amt tnum">$104.98</span> <span class="pre">to start</span></div>
             <div class="pick__note">Before options &bull; price builds live</div>
-            <p class="pick__desc">The classic first Strider. Tool-free adjustable seat and bars, padded saddle, and the balance-first design millions of kids learned on.</p>
+            <p class="pick__desc">The original 12&quot; Strider balance bike weighing 6.7 lbs assembled. It&rsquo;s the bike chosen by millions of families around the world for a reason &mdash; and a perfect weight for growing beginners who&rsquo;ll be cruising up and down sidewalks.</p>
             <a class="btn btn--wide" href="https://striderbikes.com/bike-builder/12-sport/">Build the 12 Sport &rarr;</a>
           </div>
         </div>
         <div class="pick sr">
-          <div class="pick__media"><span class="pick__tag">Lighter &amp; adjustable</span><img src="https://ksimmons0420.github.io/strider-renders/img/12-pro.png" alt="Strider 12 Pro custom-built balance bike" loading="lazy"></div>
+          <div class="pick__media"><span class="pick__tag">Lighter and faster</span><img src="https://ksimmons0420.github.io/strider-renders/img/12-pro.png" alt="Strider 12 Pro custom-built balance bike" loading="lazy"></div>
           <div class="pick__body">
             <h3>Strider&reg; 12 Pro</h3>
             <div class="pick__price"><span class="amt tnum">$144.98</span> <span class="pre">to start</span></div>
             <div class="pick__note">Before options &bull; price builds live</div>
-            <p class="pick__desc">Ultralight aluminum with more adjustability and premium components &mdash; for the rider who&rsquo;s ready to fly. Fully customizable, handlebar to wheels.</p>
+            <p class="pick__desc">An ultralight aluminum bike that weighs just 5.6 lbs assembled &mdash; made for the rider who&rsquo;s eager to fly.</p>
             <a class="btn btn--wide" href="https://striderbikes.com/bike-builder/12-pro/">Build the 12 Pro &rarr;</a>
           </div>
         </div>
@@ -432,13 +449,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="jphase">
           <div class="k">The core years</div>
-          <h3>Balancing</h3>
+          <h3>Striding</h3>
           <p>Your built 12 Sport or Pro adjusts as they grow &mdash; striding, then gliding on two wheels with real confidence.</p>
           <div class="arw">&rarr;</div>
         </div>
         <div class="jphase">
           <div class="k">When they&rsquo;re ready</div>
-          <h3>Pedaling</h3>
+          <h3>Riding</h3>
           <p>Move up to the convertible 14x when the time comes &mdash; pedals add to the same familiar ride. No training wheels, ever.</p>
         </div>
       </div>
@@ -497,9 +514,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>Before you build</h2>
       </div>
       <div class="faq sr">
-        <details><summary>Which Strider is right for my child&rsquo;s age?<span class="pm"></span></summary><div class="a">Most kids start on a 12-inch Strider somewhere between around 18 months and 5 years, and the adjustable seat and bars keep it fitting as they grow. The builder walks you through sizing &mdash; and if it isn&rsquo;t the right fit, you&rsquo;re covered by the 30-Day Money-Back Guarantee.</div></details>
-        <details><summary>Sport or Pro &mdash; what&rsquo;s the difference?<span class="pm"></span></summary><div class="a">The 12 Sport is the classic, most-popular first Strider &mdash; durable, adjustable, and ready to ride. The 12 Pro steps up to ultralight aluminum with more adjustability and premium components. Both use the same balance-first design; both fully customize in the builder.</div></details>
-        <details><summary>Does it really &ldquo;grow with them&rdquo;?<span class="pm"></span></summary><div class="a">Yes &mdash; the tool-free adjustable seat and handlebars raise as your child does, so one bike carries them through the balance years. And when they&rsquo;re ready to pedal, the convertible 14x lets pedals add to the same familiar ride.</div></details>
+        <details><summary>Which Strider is right for my child&rsquo;s age?<span class="pm"></span></summary><div class="a">Most kids start on a 12-inch Strider somewhere between around 18 months and 5 years, and the adjustable seat and bars keep it fitting as they grow. And if it isn&rsquo;t the right fit, you&rsquo;re covered by our 30-Day Money-Back Guarantee.</div></details>
+        <details><summary>Sport or Pro &mdash; what&rsquo;s the difference?<span class="pm"></span></summary><div class="a">The 12 Sport is the original, most-popular first Strider &mdash; durable, adjustable, and ready to ride. The 12 Pro steps up to ultralight aluminum with more adjustability and premium components. Both use the same balance-first design; both fully customize in the builder.</div></details>
+        <details><summary>Does it really &ldquo;grow with them&rdquo;?<span class="pm"></span></summary><div class="a">Yes &mdash; the tool-free adjustable seat and handlebars raise as your child does, so one bike carries them through the balance years. And when they&rsquo;re ready for a bigger bike, the convertible 14x lets pedals add to the same familiar ride.</div></details>
         <details><summary>Why skip training wheels?<span class="pm"></span></summary><div class="a">Balance bikes teach the hardest part first &mdash; balancing &mdash; so the move to a pedal bike tends to be faster and more confident, with no training-wheel habits to unlearn. It&rsquo;s the approach that helped over 10 million kids learn to ride.</div></details>
         <details><summary>How much does a built bike cost?<span class="pm"></span></summary><div class="a">The 12 Sport starts at $104.98 and the 12 Pro at $144.98 before options. As you choose colors, wheels and grips, the builder updates your exact price live &mdash; so what you see is what you pay.</div></details>
         <details><summary>What about shipping and returns?<span class="pm"></span></summary><div class="a">Strider bikes ship free<sup>*</sup>, and every one is backed by a 30-Day Money-Back Guarantee. Build it, try it at home, and return it if it&rsquo;s not right.</div></details>
@@ -519,7 +536,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- 15. Footer -->
   <footer class="ftr">
-    <div class="logo">STRIDER<sup>&reg;</sup></div>
+    <img class="logo" src="https://cdn11.bigcommerce.com/s-0vqb0rkahl/images/stencil/original/strider-logo_1769528772__73164.original.png" alt="Strider" style="height:22px;width:auto;display:inline-block;filter:brightness(0) invert(1)">
     <div>The original balance bike, built for kids since 2007.</div>
     <div class="fine"><sup>*</sup>Free shipping applies to Strider bikes shipped within the contiguous United States; see striderbikes.com for details. Starting prices shown are for the base build before options and are subject to change. The 30-Day Money-Back Guarantee applies to Strider bikes; full terms at striderbikes.com. Strider&reg; is a registered trademark of Strider Sports International, Inc.</div>
   </footer>
@@ -615,6 +632,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   track("lp_pageview");
 })();
 </script>
-
-</body>
-</html>
