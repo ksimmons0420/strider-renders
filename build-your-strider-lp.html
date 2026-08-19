@@ -640,7 +640,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   function label(a){
     var h=a.getAttribute("href")||"";
-    if(/bike-quiz/.test(h)){ return "quiz"; }
+    if(/bikequiz/.test(h)){ return "quiz"; }
     if(a.closest(".hero")){ return "hero"; }
     if(a.closest(".hdr")){ return "header"; }
     if(a.closest(".picks")){ return /12-pro/.test(a.href)?"pricing_pro":"pricing_sport"; }
@@ -651,7 +651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   var roots=[document.querySelector(".strider-lp"), document.getElementById("strider-scta")], i;
   for(i=0;i<roots.length;i++){ (function(root){ if(!root){ return; }
-    var links=root.querySelectorAll('a[href*="bike-builder"], a[href*="bike-quiz"]');
+    var links=root.querySelectorAll('a[href*="bike-builder"], a[href*="bikequiz"]');
     Array.prototype.forEach.call(links, function(a){
       var lab=label(a), quiz=(lab==="quiz");
       try{ a.setAttribute("href", fwd(a.getAttribute("href"))); }catch(e){}
