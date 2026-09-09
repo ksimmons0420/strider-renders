@@ -1,12 +1,11 @@
 <!--
   STRIDER BABY BALANCE BIKE LP - LAUNCH (NEW PRODUCT CATEGORY, 0-18 MONTHS)
-  VERSION 2026-09-09 - build v2 (rebranded to the "Build Your Strider" design system: 3D press buttons, bold yellow #FFCD03 + black #231F20 palette, yellow pill eyebrows, black promo bar, sand backgrounds, Libre Franklin 900, yellow-highlight H1)
+  VERSION 2026-09-09 - build v3 (wired real PDP https://striderbikes.com/baby-balance-bike on all 6 Shop CTAs [PDP live Sept 15] + added sticky mobile CTA bar; v2 = Build-Your-Strider rebrand: 3D press buttons, bold yellow/black, yellow pill eyebrows, promo bar, Libre Franklin 900)
   Chamber Media engagement. PREVIEW ONLY - not deployed to BigCommerce.
-  CTA hrefs point at a PLACEHOLDER (striderbikes.com homepage) - the real product
-  page(s) for SB-B1BL / SB-B1GN / SB-B1PK are not live on striderbikes.com yet
-  (verified 2026-09-09: /baby-balance-bikes/ only lists the $299.98/$349.98
-  2-in-1 Rocking Bikes). Swap PLACEHOLDER_CTA_URL below once real PDP link(s)
-  are supplied. Search this file for "build v2" to confirm the latest paste.
+  CTA hrefs now point at the real PDP -> https://striderbikes.com/baby-balance-bike
+  (confirmed by the Strider team 2026-09-09). IMPORTANT: the PDP does NOT go live
+  until Sept 15, 2026 - the Shop buttons will 404 until then, so do NOT deploy this
+  LP live before Sept 15. Search this file for "build v3" to confirm the latest paste.
 -->
 <title>Strider Baby Balance Bike &mdash; Ages 0-18 Months | Strider Bikes</title>
 <meta name="description" content="Baby&rsquo;s first bike and so much more. The Strider Baby Balance Bike takes tummy time to supported walking &mdash; 2.4 lb, non-scratch tires, CPSC-tested. $59.99.">
@@ -305,6 +304,28 @@
   .striderbaby-lp-foot { background: var(--sb-ink); color: rgba(255,255,255,.55); text-align: center; padding: 26px 0 40px; font-size: 12.5px; }
   .striderbaby-lp-foot a { color: rgba(255,255,255,.75); }
   .striderbaby-lp-foot p + p { margin-top: 6px; }
+
+  /* Sticky mobile CTA (mobile-only; reparent-safe literal hex) */
+  .striderbaby-lp-scta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 9000; display: none;
+    gap: 10px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255,255,255,.9); -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%);
+    border-top: 1px solid #ECE9E3; box-shadow: 0 -6px 24px rgba(35,31,32,.12);
+  }
+  .striderbaby-lp-scta a {
+    flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: .4em;
+    font-family: 'Libre Franklin', Arial, sans-serif; font-weight: 900; font-size: 16px;
+    min-height: 52px; border-radius: 999px; text-decoration: none; color: #231F20;
+    -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+    box-shadow: 0 4px 0 #231F20; transition: transform .08s ease, box-shadow .08s ease;
+  }
+  .striderbaby-lp-scta .s-shop { background: #FFCD03; border: 2px solid #231F20; flex: 1.7; }
+  .striderbaby-lp-scta .s-colors { background: #fff; border: 2px solid #231F20; }
+  .striderbaby-lp-scta a:active { transform: translateY(3px); box-shadow: 0 1px 0 #231F20; }
+  @media (max-width: 720px) {
+    .striderbaby-lp-scta { display: flex; }
+    .striderbaby-lp-foot { padding-bottom: 96px; }
+  }
 </style>
 
 <div class="striderbaby-lp">
@@ -346,7 +367,7 @@
           </ul>
 
           <div class="striderbaby-lp-hero__cta">
-            <a class="btn btn-primary" data-cta="hero" href="https://www.striderbikes.com/" data-role="shop-btn">Shop Now</a>
+            <a class="btn btn-primary" data-cta="hero" href="https://striderbikes.com/baby-balance-bike" data-role="shop-btn">Shop Now</a>
             <span class="reassurance">
               <svg class="ph" width="16" height="16" viewBox="0 0 256 256" aria-hidden="true" style="color:var(--sb-blue)"><g fill="currentColor"><path d="M216 56v56c0 96-88 120-88 120s-88-24-88-120V56a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8" opacity=".2"/><path d="M208 40H48a16 16 0 0 0-16 16v56c0 52.72 25.52 84.67 46.93 102.19c23.06 18.86 46 25.26 47 25.53a8 8 0 0 0 4.2 0c1-.27 23.91-6.67 47-25.53C198.48 196.67 224 164.72 224 112V56a16 16 0 0 0-16-16m0 72c0 37.07-13.66 67.16-40.6 89.42a129.3 129.3 0 0 1-39.4 22.2a128.3 128.3 0 0 1-38.92-21.81C61.82 179.51 48 149.3 48 112V56h160ZM82.34 141.66a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32l-56 56a8 8 0 0 1-11.32 0Z"/></g></svg>
               30-Day Money-Back Guarantee
@@ -509,19 +530,19 @@
           <div class="striderbaby-lp-colors__media"><img src="assets/baby-balance-bike/studio-blue-cutout.png" alt="Strider Baby Balance Bike in Blue"></div>
           <h3><span class="striderbaby-lp-colors__dot" style="background:var(--sb-c-blue)"></span>Blue</h3>
           <div class="sku">SB-B1BL</div>
-          <a class="btn btn-ghost btn-sm" href="https://www.striderbikes.com/">Shop Blue</a>
+          <a class="btn btn-ghost btn-sm" href="https://striderbikes.com/baby-balance-bike">Shop Blue</a>
         </div>
         <div class="striderbaby-lp-colors__card card reveal">
           <div class="striderbaby-lp-colors__media"><img src="assets/baby-balance-bike/studio-green-cutout.png" alt="Strider Baby Balance Bike in Green"></div>
           <h3><span class="striderbaby-lp-colors__dot" style="background:var(--sb-c-green)"></span>Green</h3>
           <div class="sku">SB-B1GN</div>
-          <a class="btn btn-ghost btn-sm" href="https://www.striderbikes.com/">Shop Green</a>
+          <a class="btn btn-ghost btn-sm" href="https://striderbikes.com/baby-balance-bike">Shop Green</a>
         </div>
         <div class="striderbaby-lp-colors__card card reveal">
           <div class="striderbaby-lp-colors__media"><img src="assets/baby-balance-bike/studio-pink-cutout.png" alt="Strider Baby Balance Bike in Pink"></div>
           <h3><span class="striderbaby-lp-colors__dot" style="background:var(--sb-c-pink)"></span>Pink</h3>
           <div class="sku">SB-B1PK</div>
-          <a class="btn btn-ghost btn-sm" href="https://www.striderbikes.com/">Shop Pink</a>
+          <a class="btn btn-ghost btn-sm" href="https://striderbikes.com/baby-balance-bike">Shop Pink</a>
         </div>
       </div>
     </div>
@@ -563,7 +584,7 @@
           <span class="eyebrow">The Perfect Gift</span>
           <h2>The Gift That Grows With Them</h2>
           <p>Skip the outgrown-in-a-month onesie. From baby showers to first birthdays, the Baby Balance Bike is a gift that keeps working long after the wrapping paper&rsquo;s gone &mdash; for grandparents, aunts, uncles, and anyone looking for a first gift that actually means something.</p>
-          <a class="btn btn-primary" data-cta="gift" href="https://www.striderbikes.com/">Give the Head Start</a>
+          <a class="btn btn-primary" data-cta="gift" href="https://striderbikes.com/baby-balance-bike">Give the Head Start</a>
         </div>
       </div>
     </div>
@@ -574,7 +595,7 @@
     <div class="striderbaby-lp__wrap">
       <h2>Their Head Start Starts Today.</h2>
       <p class="price-line">Strider Baby Balance Bike &middot; <strong>$59.99</strong> &middot; Blue, Green &amp; Pink</p>
-      <a class="btn btn-primary" data-cta="final" href="https://www.striderbikes.com/">Shop Now</a>
+      <a class="btn btn-primary" data-cta="final" href="https://striderbikes.com/baby-balance-bike">Shop Now</a>
       <div>
         <span class="striderbaby-lp-guarantee">
           <svg class="ph" width="20" height="20" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M216 56v56c0 96-88 120-88 120s-88-24-88-120V56a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8" opacity=".2"/><path d="M208 40H48a16 16 0 0 0-16 16v56c0 52.72 25.52 84.67 46.93 102.19c23.06 18.86 46 25.26 47 25.53a8 8 0 0 0 4.2 0c1-.27 23.91-6.67 47-25.53C198.48 196.67 224 164.72 224 112V56a16 16 0 0 0-16-16m0 72c0 37.07-13.66 67.16-40.6 89.42a129.3 129.3 0 0 1-39.4 22.2a128.3 128.3 0 0 1-38.92-21.81C61.82 179.51 48 149.3 48 112V56h160ZM82.34 141.66a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32l-56 56a8 8 0 0 1-11.32 0Z"/></g></svg>
@@ -593,10 +614,19 @@
 
 </div>
 
+<!-- Sticky mobile CTA (mobile-only; reparented to <body> for BigCommerce transform-safety) -->
+<div class="striderbaby-lp-scta">
+  <a class="s-shop" href="https://striderbikes.com/baby-balance-bike">Shop Now &middot; $59.99</a>
+  <a class="s-colors" href="#colorways">Colors</a>
+</div>
+
 <script>
 (function(){
   var root = document.currentScript.closest('.striderbaby-lp') || document.querySelector('.striderbaby-lp');
   if (!root) return;
+
+  /* ---- Reparent sticky mobile CTA to <body> (BigCommerce transform-stacking safety) ---- */
+  try { var scta = document.querySelector('.striderbaby-lp-scta'); if (scta && scta.parentNode !== document.body) document.body.appendChild(scta); } catch(e){}
 
   /* ---- Colorway selector ---- */
   var COLORS = {
