@@ -1,6 +1,6 @@
 <!--
   STRIDER BABY BALANCE BIKE LP - LAUNCH (NEW PRODUCT CATEGORY, 0-18 MONTHS)
-  VERSION 2026-09-09 - build v3 (wired real PDP https://striderbikes.com/baby-balance-bike on all 6 Shop CTAs [PDP live Sept 15] + added sticky mobile CTA bar; v2 = Build-Your-Strider rebrand: 3D press buttons, bold yellow/black, yellow pill eyebrows, promo bar, Libre Franklin 900)
+  VERSION 2026-09-09 - build v4 (sticky mobile CTA now SCROLL-REVEALS: hidden on load, slides in after the hero CTA scrolls off, tucks away at the final CTA; v3 = real PDP wired on all Shop CTAs [live Sept 15]; v2 = Build-Your-Strider rebrand)
   Chamber Media engagement. PREVIEW ONLY - not deployed to BigCommerce.
   CTA hrefs now point at the real PDP -> https://striderbikes.com/baby-balance-bike
   (confirmed by the Strider team 2026-09-09). IMPORTANT: the PDP does NOT go live
@@ -311,7 +311,10 @@
     gap: 10px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
     background: rgba(255,255,255,.9); -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%);
     border-top: 1px solid #ECE9E3; box-shadow: 0 -6px 24px rgba(35,31,32,.12);
+    transform: translateY(130%); transition: transform .3s cubic-bezier(.32,.72,0,1);
   }
+  .striderbaby-lp-scta.is-visible { transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .striderbaby-lp-scta { transition: none; } }
   .striderbaby-lp-scta a {
     flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: .4em;
     font-family: 'Libre Franklin', Arial, sans-serif; font-weight: 900; font-size: 16px;
@@ -324,7 +327,6 @@
   .striderbaby-lp-scta a:active { transform: translateY(3px); box-shadow: 0 1px 0 #231F20; }
   @media (max-width: 720px) {
     .striderbaby-lp-scta { display: flex; }
-    .striderbaby-lp-foot { padding-bottom: 96px; }
   }
 </style>
 
@@ -627,6 +629,19 @@
 
   /* ---- Reparent sticky mobile CTA to <body> (BigCommerce transform-stacking safety) ---- */
   try { var scta = document.querySelector('.striderbaby-lp-scta'); if (scta && scta.parentNode !== document.body) document.body.appendChild(scta); } catch(e){}
+
+  /* ---- Sticky CTA: hidden on load, slides in once the hero CTA scrolls away, tucks away at the final CTA ---- */
+  try {
+    var bar = document.querySelector('.striderbaby-lp-scta');
+    var heroCta = root.querySelector('[data-role="shop-btn"]');
+    var finalSec = root.querySelector('.striderbaby-lp-final');
+    if (bar && heroCta && 'IntersectionObserver' in window) {
+      var pastHero = false, atFinal = false;
+      var syncBar = function(){ bar.classList[(pastHero && !atFinal) ? 'add' : 'remove']('is-visible'); };
+      new IntersectionObserver(function(e){ pastHero = !e[0].isIntersecting; syncBar(); }, { rootMargin: '0px 0px -40px 0px' }).observe(heroCta);
+      if (finalSec) new IntersectionObserver(function(e){ atFinal = e[0].isIntersecting; syncBar(); }, { threshold: 0.2 }).observe(finalSec);
+    }
+  } catch(e){}
 
   /* ---- Colorway selector ---- */
   var COLORS = {
