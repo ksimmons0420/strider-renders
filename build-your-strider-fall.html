@@ -1,4 +1,4 @@
-<!-- STRIDER "Build Your Strider" LP - FALL/SEASONAL variant - v1 2026-09-21 (Chamber). Cloned from build-your-strider-lp.html (build v13). Changes: autumn palette layer, Fall Exclusive colorways showcase, seasonal hero/promo/final copy, LP id "build-your-strider-fall" for funnel segmentation. Tracking (GTM-KBFMHHJ, Meta 279384615876277, GA4 G-HSC86HTX7T) + compliance carried over verbatim. Colorway images = transparent cutouts isolated from the Fall Exclusive ad statics (assets/fall-v1/cut-*.png; doodle/band/CTA removed via border floodfill + largest-component). Pattern had no clean renders. Destination for the Fall Exclusive Meta ads (new BC Raw Page, slug TBD). [GitHub Pages PREVIEW for Strider team review - analytics tags stripped; the deploy version keeps them.] -->
+<!-- STRIDER "Build Your Strider" LP - FALL/SEASONAL variant - v2 2026-09-28 (Chamber). GitHub Pages PREVIEW for Strider team review - analytics tags (GTM/Meta Pixel/GA4) stripped; the deploy/BigCommerce version keeps them. v2 = Scott Altstiel + Alyssa approved feedback pass: 8 colorways renamed to their fall names + wired to prebuilt Bike Builder links; hero split into Customize 12 Sport / 12 Pro; hero pill + "online only" + "Builds in under a minute" removed; benefits CTA added; Pro "faster" claims dropped ("Lighter Frame"); High-Traction copy simplified; fall/final CTA -> "Customize your own!"; hero re-cropped 52%/40%. PENDING (Scott screenshots): benefits-CTA add-vs-move + one photo swap to PXM $s9KRHFK0J. -->
 <!--
   STRIDER BIKES - "Build Your Strider" LP - VERSION 2026-08-14 - build v13 (Strider client feedback pass: [v13] journey wording locked to "riding" (Kyle's call, Scott's preference over Alyssa's "gliding") - reconciled the 2 stray "gliding" body lines; [v12] gallery slots 5-6 swapped from BigCommerce stock to real PXM custom-bike lifestyle shots (byo-4 orange rider portrait / byo-5 pink rider wide) per Scott "make each photo a custom bike"; [v11] Sport card now uses real PXM studio render 12-sport-green.png (green, faces the Pro for an inward pair) per Scott "make the Sport a custom build like the Pro"; Alyssa+Scott copy revisions, de-orange -> yellow-box eyebrows, real Strider logo header+footer, mobile journey arrows now point down, FAQ + product-card rewrites, "classic"->"original"; + "Build it for how they ride" build-guidance section [DRAFT for Strider review]; hero swapped to the Bike Builder promo shot + gallery now custom-build PXM photos)
   Search this file for "build v8" to confirm you have the latest paste.
@@ -117,7 +117,7 @@
   background-image:linear-gradient(90deg,rgba(44,24,36,.82) 0%,rgba(44,24,36,.46) 46%,rgba(44,24,36,.08) 100%),
     linear-gradient(180deg,rgba(30,18,24,.18),rgba(30,18,24,.54)),
     url('https://ksimmons0420.github.io/strider-renders/img/byo-hero.jpg');
-  background-size:cover;background-position:66% 56%;
+  background-size:cover;background-position:52% 40%;
 }
 .strider-lp .hero .wrap{padding:56px 20px 52px;max-width:var(--maxw)}
 .strider-lp .hero__inner{max-width:660px}
@@ -321,7 +321,7 @@
 <div class="strider-lp">
 
   <!-- 1. Promo bar -->
-  <div class="promo"><b>&#127810; New Fall Exclusive colorways</b> &mdash; online only<span class="dot">&bull;</span>Free shipping<sup>*</sup><span class="dot">&bull;</span>30-Day Money-Back Guarantee</div>
+  <div class="promo"><b>&#127810; New Fall Exclusive colorways</b><span class="dot">&bull;</span>Free shipping<sup>*</sup><span class="dot">&bull;</span>30-Day Money-Back Guarantee</div>
 
   <!-- 2. Sticky header -->
   <header class="hdr">
@@ -335,15 +335,15 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero__inner">
-        <span class="chip"><span class="yd"></span>Fall Exclusives &bull; Online only</span>
         <h1>Build their bike in a <span class="u">fall colorway.</span></h1>
-        <p class="hero__sub">Limited-edition fall colorways just dropped &mdash; web-exclusive looks you&rsquo;ll only find online. Pick a favorite, then build the Strider&reg; that fits your rider, from rocking to riding.</p>
+        <p class="hero__sub">Limited-edition fall colorways just dropped! Pick a favorite, then customize the Strider&reg; that fits your rider.</p>
         <div class="hero__cta">
-          <a class="btn btn--lg" href="https://striderbikes.com/bike-builder">Build in the fall colors &rarr;</a>
+          <a class="btn btn--lg" href="https://striderbikes.com/bike-builder/12-sport/">Customize the 12 Sport &rarr;</a>
+          <a class="btn btn--lg" href="https://striderbikes.com/bike-builder/12-pro/">Customize the 12 Pro &rarr;</a>
           <a class="hero__quiz" href="https://striderbikes.com/bikequiz">Not sure which fits? Take the 30-second quiz</a>
         </div>
         <p class="hero__sub" style="font-size:16px;margin-top:14px;max-width:520px">One bike, from rocking to riding &mdash; it fits your rider today and keeps fitting for years.</p>
-        <div class="hero__micro">Free shipping<sup>*</sup><span class="dot">&bull;</span>30-Day Money-Back Guarantee<span class="dot">&bull;</span>Builds in under a minute</div>
+        <div class="hero__micro">Free shipping<sup>*</sup><span class="dot">&bull;</span>30-Day Money-Back Guarantee</div>
       </div>
     </div>
   </section>
@@ -375,16 +375,16 @@
         <p>Web-exclusive looks you&rsquo;ll only find online this season. Pick a favorite, then build the Strider&reg; that fits your rider.</p>
       </div>
       <div class="cways sr">
-        <figure class="cway sr"><img src="assets/fall-v1/cut-pro1.png" alt="Strider 12 Pro in a plum fall colorway with green wheels" loading="lazy"><figcaption><b>Strider&reg; 12 Pro</b><span>Plum</span></figcaption><a class="cway__link" href="https://striderbikes.com/bike-builder/12-pro/">Build this look &rarr;</a></figure>
-        <figure class="cway sr"><img src="assets/fall-v1/cut-pro2.png" alt="Strider 12 Pro in a red fall colorway with amber wheels" loading="lazy"><figcaption><b>Strider&reg; 12 Pro</b><span>Red</span></figcaption><a class="cway__link" href="https://striderbikes.com/bike-builder/12-pro/">Build this look &rarr;</a></figure>
-        <figure class="cway sr"><img src="assets/fall-v1/cut-pro3.png" alt="Strider 12 Pro in a blackout fall colorway with red wheels" loading="lazy"><figcaption><b>Strider&reg; 12 Pro</b><span>Black</span></figcaption><a class="cway__link" href="https://striderbikes.com/bike-builder/12-pro/">Build this look &rarr;</a></figure>
-        <figure class="cway sr"><img src="assets/fall-v1/cut-pro4.png" alt="Strider 12 Pro in a green fall colorway with purple wheels" loading="lazy"><figcaption><b>Strider&reg; 12 Pro</b><span>Green</span></figcaption><a class="cway__link" href="https://striderbikes.com/bike-builder/12-pro/">Build this look &rarr;</a></figure>
-        <figure class="cway sr"><img src="assets/fall-v1/cut-sport1.png" alt="Strider 12 Sport in a white fall colorway with orange wheels" loading="lazy"><figcaption><b>Strider&reg; 12 Sport</b><span>White</span></figcaption><a class="cway__link" href="https://striderbikes.com/bike-builder/12-sport/">Build this look &rarr;</a></figure>
-        <figure class="cway sr"><img src="assets/fall-v1/cut-sport2.png" alt="Strider 12 Sport in a sage fall colorway with orange wheels" loading="lazy"><figcaption><b>Strider&reg; 12 Sport</b><span>Sage</span></figcaption><a class="cway__link" href="https://striderbikes.com/bike-builder/12-sport/">Build this look &rarr;</a></figure>
-        <figure class="cway sr"><img src="assets/fall-v1/cut-sport3.png" alt="Strider 12 Sport in a grey fall colorway with white wheels" loading="lazy"><figcaption><b>Strider&reg; 12 Sport</b><span>Grey</span></figcaption><a class="cway__link" href="https://striderbikes.com/bike-builder/12-sport/">Build this look &rarr;</a></figure>
-        <figure class="cway sr"><img src="assets/fall-v1/cut-sport4.png" alt="Strider 12 Sport in a purple fall colorway with green wheels" loading="lazy"><figcaption><b>Strider&reg; 12 Sport</b><span>Purple</span></figcaption><a class="cway__link" href="https://striderbikes.com/bike-builder/12-sport/">Build this look &rarr;</a></figure>
+        <figure class="cway sr"><a href="https://1.doogmalink.com/r3WsFosOOd" style="display:block" aria-label="Build the Hocus Pocus Strider 12 Pro"><img src="assets/fall-v1/cut-pro1.png" alt="Strider 12 Pro in the Hocus Pocus fall colorway" loading="lazy"></a><figcaption><b>Hocus Pocus</b><span>Strider&reg; 12 Pro</span></figcaption><a class="cway__link" href="https://1.doogmalink.com/r3WsFosOOd">Build this look &rarr;</a></figure>
+        <figure class="cway sr"><a href="https://1.doogmalink.com/PdtBTbvxnC" style="display:block" aria-label="Build the Fall Colors Strider 12 Pro"><img src="assets/fall-v1/cut-pro2.png" alt="Strider 12 Pro in the Fall Colors colorway" loading="lazy"></a><figcaption><b>Fall Colors</b><span>Strider&reg; 12 Pro</span></figcaption><a class="cway__link" href="https://1.doogmalink.com/PdtBTbvxnC">Build this look &rarr;</a></figure>
+        <figure class="cway sr"><a href="https://1.doogmalink.com/CwnfHXcShA" style="display:block" aria-label="Build the Vampire Strider 12 Pro"><img src="assets/fall-v1/cut-pro3.png" alt="Strider 12 Pro in the Vampire fall colorway" loading="lazy"></a><figcaption><b>Vampire</b><span>Strider&reg; 12 Pro</span></figcaption><a class="cway__link" href="https://1.doogmalink.com/CwnfHXcShA">Build this look &rarr;</a></figure>
+        <figure class="cway sr"><a href="https://1.doogmalink.com/ErcGzTg2Ci" style="display:block" aria-label="Build the Zombie Strider 12 Pro"><img src="assets/fall-v1/cut-pro4.png" alt="Strider 12 Pro in the Zombie fall colorway" loading="lazy"></a><figcaption><b>Zombie</b><span>Strider&reg; 12 Pro</span></figcaption><a class="cway__link" href="https://1.doogmalink.com/ErcGzTg2Ci">Build this look &rarr;</a></figure>
+        <figure class="cway sr"><a href="https://1.doogmalink.com/bntRBwHH43" style="display:block" aria-label="Build the Candy Corn Strider 12 Sport"><img src="assets/fall-v1/cut-sport1.png" alt="Strider 12 Sport in the Candy Corn fall colorway" loading="lazy"></a><figcaption><b>Candy Corn</b><span>Strider&reg; 12 Sport</span></figcaption><a class="cway__link" href="https://1.doogmalink.com/bntRBwHH43">Build this look &rarr;</a></figure>
+        <figure class="cway sr"><a href="https://1.doogmalink.com/ZdfpqTBeD9" style="display:block" aria-label="Build the Pumpkin Patch Strider 12 Sport"><img src="assets/fall-v1/cut-sport2.png" alt="Strider 12 Sport in the Pumpkin Patch fall colorway" loading="lazy"></a><figcaption><b>Pumpkin Patch</b><span>Strider&reg; 12 Sport</span></figcaption><a class="cway__link" href="https://1.doogmalink.com/ZdfpqTBeD9">Build this look &rarr;</a></figure>
+        <figure class="cway sr"><a href="https://1.doogmalink.com/0vYlI4AUBZ" style="display:block" aria-label="Build the Ghost Strider 12 Sport"><img src="assets/fall-v1/cut-sport3.png" alt="Strider 12 Sport in the Ghost fall colorway" loading="lazy"></a><figcaption><b>Ghost</b><span>Strider&reg; 12 Sport</span></figcaption><a class="cway__link" href="https://1.doogmalink.com/0vYlI4AUBZ">Build this look &rarr;</a></figure>
+        <figure class="cway sr"><a href="https://1.doogmalink.com/6EC98bs6fA" style="display:block" aria-label="Build the Witch Strider 12 Sport"><img src="assets/fall-v1/cut-sport4.png" alt="Strider 12 Sport in the Witch fall colorway" loading="lazy"></a><figcaption><b>Witch</b><span>Strider&reg; 12 Sport</span></figcaption><a class="cway__link" href="https://1.doogmalink.com/6EC98bs6fA">Build this look &rarr;</a></figure>
       </div>
-      <div class="ctacenter sr" style="margin-top:30px"><a class="btn btn--lg" href="https://striderbikes.com/bike-builder">Build in the fall colors &rarr;</a></div>
+      <div class="ctacenter sr" style="margin-top:30px"><a class="btn btn--lg" href="https://striderbikes.com/bike-builder">Customize your own! &rarr;</a></div>
     </div>
   </section>
 
@@ -425,6 +425,7 @@
           <p>Free shipping<sup>*</sup> and a 30-Day Money-Back Guarantee &mdash; try it at home before you commit.</p>
         </div>
       </div>
+      <div class="ctacenter sr" style="margin-top:34px"><a class="btn btn--lg" href="https://striderbikes.com/bike-builder">Build Your Strider &rarr;</a></div>
     </div>
   </section>
 
@@ -437,7 +438,7 @@
         <p>Watch your bike &mdash; and your price &mdash; come together in real time.</p>
       </div>
       <div class="steps">
-        <div class="step sr"><div class="n tnum">1</div><h3>Pick your base</h3><p>Start with the original 12 Sport or the lighter, faster 12 Pro.</p></div>
+        <div class="step sr"><div class="n tnum">1</div><h3>Pick your base</h3><p>Start with the original 12 Sport or the lighter 12 Pro.</p></div>
         <div class="step sr"><div class="n tnum">2</div><h3>Make it theirs</h3><p>Choose frame color, wheels and grips. The bike updates live as you go.</p></div>
         <div class="step sr"><div class="n tnum">3</div><h3>See the price, add to cart</h3><p>Your exact price shows as you build &mdash; then ships free<sup>*</sup> to your door.</p></div>
       </div>
@@ -466,7 +467,7 @@
           </div>
         </div>
         <div class="pick sr">
-          <div class="pick__media"><span class="pick__tag">Lighter and faster</span><img src="https://ksimmons0420.github.io/strider-renders/img/12-pro-card.png" alt="Strider 12 Pro custom-built balance bike" loading="lazy"></div>
+          <div class="pick__media"><span class="pick__tag">Lighter Frame</span><img src="https://ksimmons0420.github.io/strider-renders/img/12-pro-card.png" alt="Strider 12 Pro custom-built balance bike" loading="lazy"></div>
           <div class="pick__body">
             <h3>Strider&reg; 12 Pro</h3>
             <div class="pick__price"><span class="amt tnum">$144.98</span> <span class="pre">to start</span></div>
@@ -496,7 +497,7 @@
         <div class="bcard sr">
           <div class="bchip"><svg class="ph ph-duo" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M248 160a40 40 0 1 1-40-40a40 40 0 0 1 40 40M48 120a40 40 0 1 0 40 40a40 40 0 0 0-40-40" opacity=".2"/><path d="M208 112a47.8 47.8 0 0 0-16.93 3.09L165.93 72H192a8 8 0 0 1 8 8a8 8 0 0 0 16 0a24 24 0 0 0-24-24h-40a8 8 0 0 0-6.91 12l11.65 20H99.26L82.91 60A8 8 0 0 0 76 56H48a8 8 0 0 0 0 16h23.41l13.71 23.51l-15.71 21.55a48.13 48.13 0 1 0 12.92 9.44l11.59-15.9l31.17 53.4a8 8 0 1 0 13.82-8l-30.32-52h57.48l11.19 19.17A48 48 0 1 0 208 112M80 160a32 32 0 1 1-20.21-29.74l-18.25 25a8 8 0 1 0 12.92 9.42l18.25-25A31.88 31.88 0 0 1 80 160m128 32a32 32 0 0 1-22.51-54.72l15.6 26.72a8 8 0 1 0 13.82-8l-15.61-26.79A32 32 0 1 1 208 192"/></g></svg></div>
           <h3>Wheels: Ultralight or High-Traction</h3>
-          <p><b>Ultralight foam</b> wheels are the beginner default &mdash; feather-light, maintenance-free, and they never go flat, so a brand-new rider can just ride (indoors or out). <b>High-Traction</b> wheels are the upgrade once they&rsquo;re around 3 and riding faster &mdash; air-filled for superior grip and extra shock absorption on rougher, quicker terrain.</p>
+          <p><b>Ultralight foam</b> wheels are the beginner default &mdash; feather-light, maintenance-free, and they never go flat, so a brand-new rider can just ride (indoors or out). <b>High-Traction</b> wheels are the air-filled upgrade for superior grip and extra shock absorption on rougher, quicker terrain.</p>
         </div>
         <div class="bcard sr">
           <div class="bchip"><svg class="ph ph-duo" width="30" height="30" viewBox="0 0 256 256" aria-hidden="true"><g fill="currentColor"><path d="M128 80a24 24 0 1 1-24-24a24 24 0 0 1 24 24m40 72a24 24 0 1 0 24 24a24 24 0 0 0-24-24" opacity=".2"/><path d="M40 88h33a32 32 0 0 0 62 0h81a8 8 0 0 0 0-16h-81a32 32 0 0 0-62 0H40a8 8 0 0 0 0 16m64-24a16 16 0 1 1-16 16a16 16 0 0 1 16-16m112 104h-17a32 32 0 0 0-62 0H40a8 8 0 0 0 0 16h97a32 32 0 0 0 62 0h17a8 8 0 0 0 0-16m-48 24a16 16 0 1 1 16-16a16 16 0 0 1-16 16"/></g></svg></div>
@@ -604,7 +605,7 @@
     <div class="wrap sr">
       <h2>Grab a fall colorway <span class="u">before they&rsquo;re gone.</span></h2>
       <p>Customize a Strider&reg; that fits your kid today &mdash; and keeps fitting for years.</p>
-      <div><a class="btn btn--lg" href="https://striderbikes.com/bike-builder">Build in the fall colors &rarr;</a></div>
+      <div><a class="btn btn--lg" href="https://striderbikes.com/bike-builder">Customize your own! &rarr;</a></div>
       <div class="final__micro">Free shipping<sup>*</sup> &bull; 30-Day Money-Back Guarantee &bull; The original balance bike since 2007</div>
     </div>
   </section>
@@ -699,7 +700,7 @@
   }
   var roots=[document.querySelector(".strider-lp"), document.getElementById("strider-scta")], i;
   for(i=0;i<roots.length;i++){ (function(root){ if(!root){ return; }
-    var links=root.querySelectorAll('a[href*="bike-builder"], a[href*="bikequiz"]');
+    var links=root.querySelectorAll('a[href*="bike-builder"], a[href*="bikequiz"], a[href*="doogmalink.com"]');
     Array.prototype.forEach.call(links, function(a){
       var lab=label(a), quiz=(lab==="quiz");
       try{ a.setAttribute("href", fwd(a.getAttribute("href"))); }catch(e){}
