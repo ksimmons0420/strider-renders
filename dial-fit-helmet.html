@@ -118,7 +118,9 @@
 .strider-lp .split li:before{content:"";position:absolute;left:0;top:3px;width:16px;height:16px;border-radius:50%;background:var(--yellow);border:2px solid var(--black)}
 /* video */
 .strider-lp .vid{max-width:900px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:#000}
-.strider-lp .vid video{width:100%;height:auto;display:block}
+.strider-lp .vid video{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.strider-lp .vidembed{max-width:900px;margin:0 auto;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:#000;aspect-ratio:16/9}
+.strider-lp .vidembed iframe{width:100%;height:100%;border:0;display:block}
 /* guarantee */
 .strider-lp .grnt{background:var(--black);color:#fff;text-align:center}
 .strider-lp .grnt .wrap{padding:52px 20px}
@@ -236,6 +238,14 @@
     </div>
   </div></section>
 
+  <!-- 7b. Product highlight video -->
+  <section class="sec"><div class="wrap">
+    <div class="sec__head sr"><span class="eyebrow">Watch</span><h2>Meet the Dial-Fit Helmet.</h2><p>The whole story in under a minute &mdash; the fit, the feel, and why kids love putting it on themselves.</p></div>
+    <div class="vid sr">
+      <video src="https://pxm.patterncdn.com/45ed8b28-7dd8-40a1-a1ef-257d4cc4f98f_preview.mp4" poster="assets/dial-fit-helmet/highlight-poster.jpg" controls preload="none" playsinline aria-label="Strider Dial-Fit Helmet highlight video"></video>
+    </div>
+  </div></section>
+
   <!-- 8. Colorway selector -->
   <section class="sec sec--sand"><div class="wrap">
     <div class="sec__head sr"><span class="eyebrow">Six ways to ride</span><h2>A color they'll actually want to wear.</h2></div>
@@ -298,6 +308,14 @@
         <p><b>Size Small</b> fits head circumferences of <b>51&ndash;54&nbsp;cm (20&ndash;21.25&nbsp;in)</b> &mdash; one size, with the HighBar&reg; dial fine-tuning the fit as they grow, so it stays snug and secure ride after ride.</p>
         <a class="btn" href="https://striderbikes.com/strider-dial-fit-helmet/">Find their fit &rarr;</a>
       </div>
+    </div>
+  </div></section>
+
+  <!-- 11b. How-to-fit video -->
+  <section class="sec sec--sand"><div class="wrap">
+    <div class="sec__head sr"><span class="eyebrow">Get the fit right</span><h2>See how easy the fit is.</h2><p>A quick walkthrough of dialing in the perfect fit &mdash; strap down, dial in, ready to ride.</p></div>
+    <div class="vidembed sr">
+      <iframe src="https://www.youtube-nocookie.com/embed/yY6CK0vMZqc" title="How to fit the Strider Dial-Fit Helmet" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div></section>
 
